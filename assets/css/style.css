@@ -564,3 +564,134 @@ img {
     font-size: clamp(2.4rem, 10vw, 3.5rem);
   }
 }
+/* =========================
+   PAGE TARIFS
+   ========================= */
+
+.page-tarifs .hero {
+  padding: 130px 0 90px;
+}
+
+.page-tarifs .hero-inner {
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+}
+
+.page-tarifs .hero h1 {
+  font-size: clamp(3rem, 5vw, 4.8rem);
+  max-width: 760px;
+}
+
+.page-tarifs .hero-text {
+  max-width: 620px;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  margin-top: 40px;
+}
+
+.pricing-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.1);
+}
+
+.pricing-card-featured {
+  border: 2px solid rgba(37, 99, 235, 0.18);
+  box-shadow: 0 20px 50px rgba(37, 99, 235, 0.12);
+}
+
+.pricing-badge {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.pricing-label {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.pricing-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+
+.pricing-price {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: 18px;
+}
+
+.pricing-text {
+  color: var(--color-text-light);
+  margin-bottom: 20px;
+}
+
+.pricing-list {
+  margin-bottom: 24px;
+}
+
+.pricing-list li {
+  font-weight: 500;
+}
+
+.maintenance-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.tarifs-notes {
+  background: #ffffff;
+}
+
+.tarifs-list {
+  max-width: 900px;
+}
+
+@media (max-width: 1100px) {
+  .page-tarifs .hero-inner,
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-tarifs .hero {
+    padding: 100px 0 70px;
+  }
+
+  .page-tarifs .hero h1 {
+    font-size: clamp(2.4rem, 10vw, 3.5rem);
+  }
+
+  .pricing-card {
+    padding: 24px;
+  }
+
+  .pricing-price {
+    font-size: 1.7rem;
+  }
+}
