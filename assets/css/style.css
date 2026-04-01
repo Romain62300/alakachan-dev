@@ -797,3 +797,31 @@ body {
   outline: none;
   border-color: var(--color-primary);
 }
+/* PAGE LEGALE */
+
+.legal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.legal-block {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+}
+
+.legal-block h2 {
+  margin-bottom: 14px;
+  font-size: 1.5rem;
+}
+
+.legal-block p {
+  color: var(--color-text-light);
+  margin-bottom: 10px;
+}
+
+.legal-block p:last-child {
+  margin-bottom: 0;
+}
