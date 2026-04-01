@@ -669,6 +669,13 @@ img {
 .tarifs-list {
   max-width: 900px;
 }
+.tarifs-description {
+  max-width: 820px;
+  margin: 36px auto 0;
+  text-align: center;
+  color: var(--color-text-light);
+  font-size: 1.05rem;
+}
 
 @media (max-width: 1100px) {
   .page-tarifs .hero-inner,
