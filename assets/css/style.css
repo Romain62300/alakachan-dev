@@ -25,10 +25,13 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Inter", sans-serif;
   color: var(--color-text);
-  background: var(--color-white);
   line-height: 1.6;
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.05), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.06), transparent 50%),
+    #ffffff;
 }
 
 a {
@@ -255,6 +258,25 @@ img {
   background: white;
 }
 
+.hero-card {
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(219, 228, 240, 0.95);
+  border-radius: 24px;
+  padding: 36px;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.10);
+}
+
+.hero-card h2 {
+  font-size: 1.8rem;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+
+.hero-card p {
+  color: var(--color-text-light);
+  line-height: 1.7;
+}
+
 /* SECTIONS */
 
 .services-preview,
@@ -303,7 +325,15 @@ img {
   padding: 32px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
 }
+
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
 
 .card:hover {
   transform: translateY(-10px) scale(1.02);
@@ -314,6 +344,13 @@ img {
   margin-bottom: 14px;
   font-size: 1.28rem;
   line-height: 1.2;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ABOUT PREVIEW */
@@ -388,9 +425,7 @@ img {
   margin-top: 18px;
 }
 
-/* =========================
-   HERO SERVICES
-   ========================= */
+/* PAGE SERVICES */
 
 .page-services .hero {
   padding: 130px 0 90px;
@@ -410,164 +445,7 @@ img {
   max-width: 620px;
 }
 
-.page-services .hero-card {
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(219, 228, 240, 0.95);
-  border-radius: 24px;
-  padding: 36px;
-  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.10);
-}
-
-.page-services .hero-card h2 {
-  font-size: 1.8rem;
-  line-height: 1.15;
-  margin-bottom: 14px;
-}
-
-.page-services .hero-card p {
-  color: var(--color-text-light);
-  line-height: 1.7;
-}
-
-/* FOOTER */
-
-.site-footer {
-  padding: 34px 0;
-  border-top: 1px solid var(--color-border);
-  background: #ffffff;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
-  align-items: center;
-}
-
-.footer-brand {
-  font-weight: 800;
-  font-size: 1.05rem;
-}
-
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.footer-links a {
-  color: var(--color-text-light);
-}
-
-.footer-links a:hover {
-  color: var(--color-primary);
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 1100px) {
-  .hero-inner {
-    grid-template-columns: 1fr;
-    gap: 34px;
-  }
-
-  .hero-image {
-    justify-content: flex-start;
-  }
-
-  .hero-image img {
-    max-width: 360px;
-  }
-
-  .page-services .hero-inner {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-}
-
-@media (max-width: 980px) {
-  .about-preview-inner,
-  .cards-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .header-inner {
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 16px 0;
-  }
-
-  .main-nav .nav-list {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 18px;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-@media (max-width: 640px) {
-  .hero {
-    padding: 90px 0 70px;
-  }
-
-  .page-services .hero {
-    padding: 100px 0 70px;
-  }
-
-  .site-header {
-    position: static;
-  }
-
-  .btn {
-    width: 100%;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-  }
-
-  .main-nav .nav-list {
-    gap: 14px;
-  }
-
-  .logo {
-    font-size: 1.4rem;
-  }
-
-  .card,
-  .check-list,
-  .cta-box,
-  .page-services .hero-card {
-    padding: 24px;
-  }
-
-  .hero-image img {
-    max-width: 100%;
-    border-radius: 22px;
-  }
-
-  .services-preview,
-  .about-preview,
-  .cta-section {
-    padding: 72px 0;
-  }
-
-  .cta-box h2 {
-    font-size: 2rem;
-  }
-
-  .page-services .hero h1 {
-    font-size: clamp(2.4rem, 10vw, 3.5rem);
-  }
-}
-
-/* =========================
-   PAGE TARIFS
-   ========================= */
+/* PAGE TARIFS */
 
 .page-tarifs .hero {
   padding: 130px 0 90px;
@@ -587,34 +465,14 @@ img {
   max-width: 620px;
 }
 
-.page-tarifs .hero-card {
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(219, 228, 240, 0.95);
-  border-radius: 24px;
-  padding: 36px;
-  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.10);
-}
-
-.page-tarifs .hero-card h2 {
-  font-size: 1.8rem;
-  line-height: 1.15;
-  margin-bottom: 14px;
-}
-
-.page-tarifs .hero-card p {
-  color: var(--color-text-light);
-  line-height: 1.7;
-}
-
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 26px;
   margin-top: 40px;
-  align-items: stretch; /* ← toutes les cartes à la même hauteur */
+  align-items: stretch;
 }
 
-/* CORRECTIF : cartes de même hauteur, bouton aligné en bas */
 .pricing-card {
   position: relative;
   background: #ffffff;
@@ -622,8 +480,8 @@ img {
   padding: 32px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-  display: flex;           /* ← ajout */
-  flex-direction: column;  /* ← ajout */
+  display: flex;
+  flex-direction: column;
 }
 
 .pricing-card:hover {
@@ -677,12 +535,12 @@ img {
   margin-bottom: 24px;
 }
 
-.pricing-card .btn {
-  margin-top: auto; /* ← pousse le bouton vers le bas quelle que soit la hauteur du contenu */
-}
-
 .pricing-list li {
   font-weight: 500;
+}
+
+.pricing-card .btn {
+  margin-top: auto;
 }
 
 .maintenance-card h3 {
@@ -706,51 +564,92 @@ img {
   font-size: 1.05rem;
 }
 
-@media (max-width: 1100px) {
-  .page-tarifs .hero-inner,
-  .pricing-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
+/* PAGE REALISATIONS */
+
+.page-realisations .hero {
+  padding: 130px 0 90px;
 }
 
-@media (max-width: 640px) {
-  .page-tarifs .hero {
-    padding: 100px 0 70px;
-  }
-
-  .page-tarifs .hero h1 {
-    font-size: clamp(2.4rem, 10vw, 3.5rem);
-  }
-
-  .pricing-card {
-    padding: 24px;
-  }
-
-  .pricing-price {
-    font-size: 1.7rem;
-  }
+.page-realisations .hero-inner {
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
 }
 
-body {
-  background:
-    radial-gradient(circle at top left, rgba(37, 99, 235, 0.05), transparent 40%),
-    radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.06), transparent 50%),
-    #ffffff;
+.page-realisations .hero h1 {
+  font-size: clamp(3rem, 5vw, 4.8rem);
+  max-width: 760px;
 }
 
-.card {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.6s ease forwards;
+.page-realisations .hero-text {
+  max-width: 620px;
 }
 
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 40px;
 }
+
+.project-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 28px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+.project-showcase-reverse .project-showcase-media {
+  order: 2;
+}
+
+.project-showcase-reverse .project-showcase-content {
+  order: 1;
+}
+
+.project-showcase-media img {
+  width: 100%;
+  height: 100%;
+  max-height: 340px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 1px solid rgba(219, 228, 240, 0.95);
+}
+
+.project-showcase-content h3 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.project-tag {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--color-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+}
+
+.project-description {
+  color: var(--color-text-light);
+  margin-bottom: 18px;
+}
+
+.project-tech {
+  font-weight: 600;
+  margin-bottom: 22px;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
 .project-card .project-type {
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -764,11 +663,8 @@ body {
   margin-bottom: 16px;
 }
 
-.project-tech {
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
+/* CONTACT */
+
 .contact-form {
   max-width: 600px;
   margin: 40px auto 0;
@@ -790,6 +686,7 @@ body {
   border-radius: 12px;
   border: 1px solid var(--color-border);
   font-size: 1rem;
+  font-family: inherit;
 }
 
 .form-group input:focus,
@@ -797,6 +694,7 @@ body {
   outline: none;
   border-color: var(--color-primary);
 }
+
 /* PAGE LEGALE */
 
 .legal-content {
@@ -825,31 +723,159 @@ body {
 .legal-block p:last-child {
   margin-bottom: 0;
 }
-/* PAGE LEGALE */
 
-.legal-content {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
+/* FOOTER */
 
-.legal-block {
+.site-footer {
+  padding: 34px 0;
+  border-top: 1px solid var(--color-border);
   background: #ffffff;
-  border-radius: 24px;
-  padding: 32px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
 }
 
-.legal-block h2 {
-  margin-bottom: 14px;
-  font-size: 1.5rem;
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
 }
 
-.legal-block p {
+.footer-brand {
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-links a {
   color: var(--color-text-light);
-  margin-bottom: 10px;
 }
 
-.legal-block p:last-child {
-  margin-bottom: 0;
+.footer-links a:hover {
+  color: var(--color-primary);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .hero-inner,
+  .page-services .hero-inner,
+  .page-tarifs .hero-inner,
+  .page-realisations .hero-inner,
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .hero-image {
+    justify-content: flex-start;
+  }
+
+  .hero-image img {
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 980px) {
+  .about-preview-inner,
+  .cards-grid,
+  .project-showcase,
+  .project-showcase-reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .project-showcase-reverse .project-showcase-media,
+  .project-showcase-reverse .project-showcase-content {
+    order: initial;
+  }
+
+  .header-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 16px 0;
+  }
+
+  .main-nav .nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero,
+  .page-services .hero,
+  .page-tarifs .hero,
+  .page-realisations .hero {
+    padding: 100px 0 70px;
+  }
+
+  .site-header {
+    position: sticky;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .hero-actions,
+  .project-links {
+    flex-direction: column;
+  }
+
+  .main-nav .nav-list {
+    gap: 14px;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  .card,
+  .check-list,
+  .cta-box,
+  .hero-card,
+  .pricing-card,
+  .project-showcase,
+  .legal-block {
+    padding: 24px;
+  }
+
+  .hero-image img {
+    max-width: 100%;
+    border-radius: 22px;
+  }
+
+  .services-preview,
+  .about-preview,
+  .cta-section {
+    padding: 72px 0;
+  }
+
+  .hero h1,
+  .page-services .hero h1,
+  .page-tarifs .hero h1,
+  .page-realisations .hero h1 {
+    font-size: clamp(2.4rem, 10vw, 3.5rem);
+  }
+
+  .cta-box h2 {
+    font-size: 2rem;
+  }
+
+  .pricing-price {
+    font-size: 1.7rem;
+  }
+
+  .project-showcase-content h3 {
+    font-size: 1.6rem;
+  }
 }
