@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>À propos | Alakachan Dev</title>
-  <meta name="description" content="Découvrez le profil de Romain Monier, développeur web.">
+  <meta name="description" content="Romain Monier, développeur web freelance spécialisé dans la création de sites pour indépendants et petites structures.">
+  <link rel="icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
-<body class="page-about">
-
+<body class="page-apropos">
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo">Alakachan <span>Dev</span></a>
-
       <nav class="main-nav">
         <ul class="nav-list">
           <li><a href="index.html">Accueil</a></li>
@@ -28,118 +25,83 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-
       <a href="devis.html" class="btn btn-primary">Demander un devis</a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
-
+  <div id="nav-overlay"></div>
   <main>
-
-    <!-- HERO -->
     <section class="hero">
       <div class="container hero-inner">
         <div>
           <p class="eyebrow">À propos</p>
           <h1>Un développeur web qui privilégie le concret</h1>
-          <p class="hero-text">
-            Je conçois des sites web clairs, modernes et efficaces, avec une approche simple :
-            faire des choses utiles, compréhensibles et fiables.
-          </p>
+          <p class="hero-text">Je conçois des sites web clairs, modernes et efficaces, avec une approche simple : faire des choses utiles, compréhensibles et fiables.</p>
         </div>
-
         <div class="hero-card">
           <h2>Une approche directe</h2>
-          <p>
-            Pas de complexité inutile. L’objectif est toujours de créer un site
-            qui fonctionne bien et qui inspire confiance dès les premières secondes.
-          </p>
+          <p>Pas de complexité inutile. L'objectif est toujours de créer un site qui fonctionne bien et qui inspire confiance dès les premières secondes.</p>
         </div>
       </div>
     </section>
 
-    <!-- PRESENTATION -->
     <section class="services-preview">
-      <div class="container about-preview-inner">
-
-        <div>
-          <h2>Qui suis-je ?</h2>
-          <p>
-            Je suis actuellement en formation en développement d’applications,
-            avec une spécialisation progressive vers le développement web.
-          </p>
-
-          <p>
-            J’ai choisi de me concentrer sur des projets concrets, que je réalise de A à Z,
-            afin de maîtriser réellement les bases et la logique de développement.
-          </p>
-
-          <p>
-            Mon objectif est simple : être capable de livrer des sites propres,
-            compréhensibles et réellement utilisables.
-          </p>
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Qui suis-je ?</p>
+          <h2>Romain Monier, créateur de sites web</h2>
+          <p>Je me spécialise dans la création de sites pour indépendants et petites structures. Je réalise chaque projet de A à Z, de la conception à la mise en ligne, en privilégiant la clarté et la qualité du résultat.</p>
         </div>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Frontend</h3>
+            <p>HTML, CSS, JavaScript, React — pour des interfaces claires, rapides et agréables à utiliser sur tous les écrans.</p>
+          </article>
+          <article class="card">
+            <h3>Backend</h3>
+            <p>Node.js, Express, PHP — pour des solutions solides et adaptées aux besoins de chaque projet.</p>
+          </article>
+          <article class="card">
+            <h3>Base de données</h3>
+            <p>MySQL, SQLite — pour stocker et gérer vos données de façon fiable et structurée.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <section class="about-preview">
+      <div class="container about-preview-inner">
+        <div>
+          <p class="eyebrow">Ma façon de travailler</p>
+          <h2>Un travail sérieux, orienté résultats</h2>
+          <p>Je m'engage sur chaque projet avec la même rigueur : du code propre, une communication claire et un résultat que vous pouvez utiliser immédiatement.</p>
+        </div>
         <ul class="check-list">
           <li>Travail autonome sur des projets complets</li>
           <li>Approche orientée résultats concrets</li>
           <li>Code structuré et lisible</li>
           <li>Progression continue</li>
         </ul>
-
       </div>
     </section>
 
-    <!-- TECH -->
-    <section class="services-preview">
-      <div class="container">
-
-        <div class="section-heading">
-          <p class="eyebrow">Compétences</p>
-          <h2>Technologies utilisées</h2>
-        </div>
-
-        <div class="cards-grid">
-
-          <div class="card">
-            <h3>Frontend</h3>
-            <p>HTML, CSS, JavaScript, React</p>
-          </div>
-
-          <div class="card">
-            <h3>Backend</h3>
-            <p>Node.js, Express, PHP</p>
-          </div>
-
-          <div class="card">
-            <h3>Base de données</h3>
-            <p>MySQL, SQLite</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
     <section class="cta-section">
       <div class="container cta-box">
         <p class="eyebrow">Un projet ?</p>
         <h2>Discutons de votre besoin</h2>
-        <p>
-          Je peux vous accompagner pour créer un site clair et efficace.
-        </p>
+        <p>Je peux vous accompagner pour créer un site clair et efficace.</p>
         <a href="contact.html" class="btn btn-primary">Me contacter</a>
       </div>
     </section>
-
   </main>
-
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>
         <p class="footer-brand">Alakachan Dev</p>
         <p>Création de sites web professionnels</p>
       </div>
-
       <div class="footer-links">
         <a href="mentions-legales.html">Mentions légales</a>
         <a href="politique-confidentialite.html">Confidentialité</a>
@@ -147,6 +109,6 @@
       </div>
     </div>
   </footer>
-
+  <script src="assets/js/menu.js"></script>
 </body>
 </html>

@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Alakachan Dev</title>
   <meta name="description" content="Contactez Alakachan Dev pour discuter de votre projet de site web.">
+  <link rel="icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body class="page-contact">
-
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo">Alakachan <span>Dev</span></a>
-
       <nav class="main-nav">
         <ul class="nav-list">
           <li><a href="index.html">Accueil</a></li>
@@ -28,94 +25,71 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-
       <a href="devis.html" class="btn btn-primary">Demander un devis</a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
-
+  <div id="nav-overlay"></div>
   <main>
-
-    <!-- HERO -->
     <section class="hero">
       <div class="container hero-inner">
         <div>
           <p class="eyebrow">Contact</p>
           <h1>Parlons de votre projet</h1>
-          <p class="hero-text">
-            Vous avez une idée, un besoin ou simplement une question ?
-            Je suis disponible pour échanger et vous proposer une solution adaptée.
-          </p>
+          <p class="hero-text">Vous avez une idée, un besoin ou simplement une question ? Je suis disponible pour échanger et vous proposer une solution adaptée.</p>
         </div>
-
         <div class="hero-card">
           <h2>Réponse rapide</h2>
-          <p>
-            Je réponds généralement sous 24 à 48h.
-            Chaque demande est étudiée avec attention.
-          </p>
+          <p>Je réponds généralement sous 24 à 48h. Chaque demande est étudiée avec attention.</p>
         </div>
       </div>
     </section>
 
-    <!-- FORMULAIRE -->
     <section class="services-preview">
       <div class="container">
-
         <div class="section-heading">
           <p class="eyebrow">Formulaire</p>
           <h2>Décrivez votre besoin</h2>
-          <p>
-            Plus votre demande est précise, plus je pourrai vous répondre efficacement.
-          </p>
+          <p>Plus votre demande est précise, plus je pourrai vous répondre efficacement.</p>
         </div>
-
-        <form class="contact-form">
-
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/meepwezw" method="POST">
           <div class="form-group">
             <label for="name">Nom</label>
-            <input type="text" id="name" placeholder="Votre nom" required>
+            <input type="text" id="name" name="name" placeholder="Votre nom" required>
           </div>
-
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Votre email" required>
+            <input type="email" id="email" name="email" placeholder="Votre email" required>
           </div>
-
           <div class="form-group">
             <label for="message">Votre message</label>
-            <textarea id="message" rows="5" placeholder="Décrivez votre projet..." required></textarea>
+            <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet..." required></textarea>
           </div>
-
-          <button type="submit" class="btn btn-primary">
-            Envoyer la demande
-          </button>
-
+          <input type="text" name="_gotcha" style="display:none">
+          <button type="submit" class="btn btn-primary" id="submit-btn">Envoyer la demande</button>
+          <p class="form-success" id="form-success" style="display:none">✓ Message envoyé ! Je vous réponds sous 24-48h.</p>
+          <p class="form-error" id="form-error" style="display:none">Une erreur s'est produite. Réessayez ou contactez-moi directement.</p>
         </form>
-
       </div>
     </section>
 
-    <!-- CTA -->
     <section class="cta-section">
       <div class="container cta-box">
         <p class="eyebrow">Projet web</p>
-        <h2>Besoin d’un site rapidement ?</h2>
-        <p>
-          Je peux vous accompagner de l’idée jusqu’à la mise en ligne.
-        </p>
+        <h2>Besoin d'un site rapidement ?</h2>
+        <p>Je peux vous accompagner de l'idée jusqu'à la mise en ligne.</p>
         <a href="tarifs.html" class="btn btn-primary">Voir les tarifs</a>
       </div>
     </section>
-
   </main>
-
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>
         <p class="footer-brand">Alakachan Dev</p>
         <p>Création de sites web professionnels</p>
       </div>
-
       <div class="footer-links">
         <a href="mentions-legales.html">Mentions légales</a>
         <a href="politique-confidentialite.html">Confidentialité</a>
@@ -123,6 +97,7 @@
       </div>
     </div>
   </footer>
-
+  <script src="assets/js/menu.js"></script>
+  <script src="assets/js/form.js"></script>
 </body>
 </html>

@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Politique de cookies | Alakachan Dev</title>
   <meta name="description" content="Politique de cookies du site Alakachan Dev.">
+  <link rel="icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body class="page-legal">
-
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo">Alakachan <span>Dev</span></a>
-
       <nav class="main-nav">
         <ul class="nav-list">
           <li><a href="index.html">Accueil</a></li>
@@ -28,91 +25,43 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-
       <a href="devis.html" class="btn btn-primary">Demander un devis</a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
-
+  <div id="nav-overlay"></div>
   <main>
     <section class="hero">
-      <div class="container hero-inner">
-        <div>
-          <p class="eyebrow">Cookies</p>
-          <h1>Politique de cookies</h1>
-          <p class="hero-text">
-            Cette page explique de manière simple l’utilisation éventuelle de cookies
-            lors de la navigation sur le site.
-          </p>
-        </div>
-
-        <div class="hero-card">
-          <h2>Information claire</h2>
-          <p>
-            L’objectif est d’informer les visiteurs sur la présence éventuelle de cookies
-            et leur rôle dans le fonctionnement du site.
-          </p>
-        </div>
+      <div class="container">
+        <p class="eyebrow">Légal</p>
+        <h1>Politique de cookies</h1>
       </div>
     </section>
-
     <section class="services-preview">
       <div class="container legal-content">
-
-        <article class="legal-block">
-          <h2>Qu’est-ce qu’un cookie ?</h2>
-          <p>
-            Un cookie est un petit fichier enregistré sur votre appareil lors de la consultation
-            d’un site internet. Il permet notamment d’assurer certaines fonctions techniques
-            ou de recueillir des informations de navigation.
-          </p>
-        </article>
-
-        <article class="legal-block">
-          <h2>Utilisation sur ce site</h2>
-          <p>
-            À ce jour, le site Alakachan Dev n’utilise pas de cookies de suivi publicitaire
-            ou d’analyse avancée. Certains cookies techniques peuvent toutefois être nécessaires
-            au bon fonctionnement du site ou de services tiers intégrés ultérieurement.
-          </p>
-        </article>
-
-        <article class="legal-block">
-          <h2>Cookies techniques</h2>
-          <p>
-            Ces cookies peuvent être utilisés pour assurer l’affichage correct du site,
-            améliorer l’expérience utilisateur ou conserver certains choix temporaires
-            liés à la navigation.
-          </p>
-        </article>
-
-        <article class="legal-block">
-          <h2>Gestion des cookies</h2>
-          <p>
-            Vous pouvez configurer votre navigateur pour refuser ou supprimer les cookies.
-            Cette action peut toutefois modifier certaines fonctionnalités ou l’affichage
-            de certains contenus.
-          </p>
-        </article>
-
-        <article class="legal-block">
-          <h2>Évolution de la politique</h2>
-          <p>
-            Cette politique de cookies peut être mise à jour à tout moment en fonction
-            de l’évolution du site, de ses outils ou de la réglementation applicable.
-          </p>
-        </article>
-
+        <div class="legal-block">
+          <h2>Utilisation des cookies</h2>
+          <p>Ce site n'utilise pas de cookies publicitaires ou de tracking. Les seuls cookies potentiellement déposés sont liés au bon fonctionnement technique du site (session, préférences).</p>
+        </div>
+        <div class="legal-block">
+          <h2>Cookies tiers</h2>
+          <p>La police de caractères Inter est chargée via Google Fonts. Google peut déposer des cookies techniques dans ce cadre. Pour en savoir plus, consultez la politique de confidentialité de Google.</p>
+        </div>
+        <div class="legal-block">
+          <h2>Vos choix</h2>
+          <p>Vous pouvez désactiver les cookies dans les paramètres de votre navigateur. Cela n'affectera pas votre navigation sur ce site.</p>
+        </div>
       </div>
     </section>
   </main>
-
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>
         <p class="footer-brand">Alakachan Dev</p>
         <p>Création de sites web professionnels</p>
       </div>
-
       <div class="footer-links">
         <a href="mentions-legales.html">Mentions légales</a>
         <a href="politique-confidentialite.html">Confidentialité</a>
@@ -120,6 +69,6 @@
       </div>
     </div>
   </footer>
-
+  <script src="assets/js/menu.js"></script>
 </body>
 </html>

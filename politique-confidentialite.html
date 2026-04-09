@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Politique de confidentialité | Alakachan Dev</title>
   <meta name="description" content="Politique de confidentialité du site Alakachan Dev.">
+  <link rel="icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body class="page-legal">
-
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo">Alakachan <span>Dev</span></a>
-
       <nav class="main-nav">
         <ul class="nav-list">
           <li><a href="index.html">Accueil</a></li>
@@ -28,95 +25,47 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-
       <a href="devis.html" class="btn btn-primary">Demander un devis</a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
-
+  <div id="nav-overlay"></div>
   <main>
     <section class="hero">
-      <div class="container hero-inner">
-        <div>
-          <p class="eyebrow">Données personnelles</p>
-          <h1>Politique de confidentialité</h1>
-          <p class="hero-text">
-            Cette page explique de manière simple quelles informations peuvent être collectées
-            via ce site et dans quel but.
-          </p>
-        </div>
-
-        <div class="hero-card">
-          <h2>Clarté et transparence</h2>
-          <p>
-            L’objectif est de garantir une utilisation du site claire, respectueuse
-            et transparente pour chaque visiteur.
-          </p>
-        </div>
+      <div class="container">
+        <p class="eyebrow">Légal</p>
+        <h1>Politique de confidentialité</h1>
       </div>
     </section>
-
     <section class="services-preview">
       <div class="container legal-content">
-
-        <article class="legal-block">
+        <div class="legal-block">
           <h2>Données collectées</h2>
-          <p>
-            Lorsque vous utilisez le formulaire de contact, certaines données peuvent être demandées,
-            comme votre nom, votre adresse email et le contenu de votre message.
-          </p>
-        </article>
-
-        <article class="legal-block">
-          <h2>Finalité de la collecte</h2>
-          <p>
-            Ces informations sont uniquement utilisées pour répondre à votre demande,
-            échanger au sujet d’un projet ou assurer un suivi de contact.
-          </p>
-        </article>
-
-        <article class="legal-block">
+          <p>Via le formulaire de contact, les données suivantes sont collectées : nom, adresse email et message. Ces données sont transmises par Formspree et utilisées uniquement pour répondre à votre demande.</p>
+        </div>
+        <div class="legal-block">
+          <h2>Utilisation des données</h2>
+          <p>Vos données ne sont pas revendues à des tiers. Elles sont utilisées uniquement pour traiter votre demande et vous répondre.</p>
+        </div>
+        <div class="legal-block">
           <h2>Durée de conservation</h2>
-          <p>
-            Les données éventuellement transmises sont conservées uniquement pendant le temps
-            nécessaire au traitement de la demande et à l’échange éventuel qui en découle.
-          </p>
-        </article>
-
-        <article class="legal-block">
-          <h2>Partage des données</h2>
-          <p>
-            Les données transmises via le site ne sont ni revendues ni cédées à des tiers.
-            Elles sont utilisées uniquement dans le cadre de l’activité liée au site.
-          </p>
-        </article>
-
-        <article class="legal-block">
+          <p>Les données sont conservées le temps nécessaire au traitement de votre demande, et supprimées dans un délai raisonnable ensuite.</p>
+        </div>
+        <div class="legal-block">
           <h2>Vos droits</h2>
-          <p>
-            Conformément à la réglementation applicable, vous pouvez demander l’accès,
-            la rectification ou la suppression de vos données en contactant l’éditeur du site.
-          </p>
-        </article>
-
-        <article class="legal-block">
-          <h2>Contact</h2>
-          <p>
-            Pour toute question relative à la confidentialité ou au traitement des données,
-            vous pouvez écrire à : <strong>r.monier62@hotmail.com</strong>
-          </p>
-        </article>
-
+          <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ces droits, contactez-moi via le formulaire de contact.</p>
+        </div>
       </div>
     </section>
   </main>
-
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>
         <p class="footer-brand">Alakachan Dev</p>
         <p>Création de sites web professionnels</p>
       </div>
-
       <div class="footer-links">
         <a href="mentions-legales.html">Mentions légales</a>
         <a href="politique-confidentialite.html">Confidentialité</a>
@@ -124,6 +73,6 @@
       </div>
     </div>
   </footer>
-
+  <script src="assets/js/menu.js"></script>
 </body>
 </html>

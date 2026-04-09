@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mentions légales | Alakachan Dev</title>
   <meta name="description" content="Mentions légales du site Alakachan Dev.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body class="page-legal">
-
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo">Alakachan <span>Dev</span></a>
-
       <nav class="main-nav">
         <ul class="nav-list">
           <li><a href="index.html">Accueil</a></li>
@@ -25,90 +25,49 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-
       <a href="devis.html" class="btn btn-primary">Demander un devis</a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
-
+  <div id="nav-overlay"></div>
   <main>
     <section class="hero">
-      <div class="container hero-inner">
-        <div>
-          <p class="eyebrow">Informations légales</p>
-          <h1>Mentions légales</h1>
-          <p class="hero-text">
-            Vous trouverez sur cette page les informations relatives à l’éditeur du site
-            et aux conditions générales d’utilisation.
-          </p>
-        </div>
-
-        <div class="hero-card">
-          <h2>Transparence</h2>
-          <p>
-            Ces informations sont fournies pour garantir une navigation claire
-            et conforme aux obligations légales applicables.
-          </p>
-        </div>
+      <div class="container">
+        <p class="eyebrow">Légal</p>
+        <h1>Mentions légales</h1>
       </div>
     </section>
-
     <section class="services-preview">
       <div class="container legal-content">
-
-        <article class="legal-block">
+        <div class="legal-block">
           <h2>Éditeur du site</h2>
-          <p><strong>Nom :</strong> Romain Monier</p>
-          <p><strong>Nom commercial :</strong> Alakachan Dev</p>
-          <p><strong>Email :</strong> r.monier62@hotmail.com</p>
-          <p><strong>Ville :</strong> Lens, France</p>
-        </article>
-
-        <article class="legal-block">
+          <p>Alakachan Dev — Romain Monier</p>
+          <p>Auto-entrepreneur</p>
+          <p>Contact : via le formulaire de contact du site</p>
+        </div>
+        <div class="legal-block">
           <h2>Hébergement</h2>
-          <p>
-            Ce site est hébergé par GitHub Pages, service proposé par GitHub.
-          </p>
-        </article>
-
-        <article class="legal-block">
+          <p>Ce site est hébergé sur GitHub Pages (GitHub, Inc. — 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA).</p>
+        </div>
+        <div class="legal-block">
           <h2>Propriété intellectuelle</h2>
-          <p>
-            L’ensemble des contenus présents sur ce site, incluant notamment les textes,
-            éléments visuels, structure et mise en page, est protégé par le droit de la
-            propriété intellectuelle. Toute reproduction, diffusion ou utilisation sans
-            autorisation préalable est interdite.
-          </p>
-        </article>
-
-        <article class="legal-block">
+          <p>L'ensemble du contenu de ce site (textes, images, structure) est la propriété exclusive d'Alakachan Dev. Toute reproduction sans autorisation est interdite.</p>
+        </div>
+        <div class="legal-block">
           <h2>Responsabilité</h2>
-          <p>
-            Les informations présentes sur ce site sont fournies à titre indicatif.
-            Malgré le soin apporté à leur rédaction, des erreurs ou omissions peuvent
-            exister. L’éditeur du site ne saurait être tenu responsable de l’usage
-            qui pourrait être fait des informations diffusées.
-          </p>
-        </article>
-
-        <article class="legal-block">
-          <h2>Contact</h2>
-          <p>
-            Pour toute question relative au site ou à son contenu, vous pouvez utiliser
-            la page de contact ou écrire à l’adresse email indiquée ci-dessus.
-          </p>
-        </article>
-
+          <p>Les informations fournies sur ce site le sont à titre indicatif. Alakachan Dev s'efforce de les maintenir à jour et exactes, mais ne peut être tenu responsable d'éventuelles erreurs ou omissions.</p>
+        </div>
       </div>
     </section>
   </main>
-
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>
         <p class="footer-brand">Alakachan Dev</p>
         <p>Création de sites web professionnels</p>
       </div>
-
       <div class="footer-links">
         <a href="mentions-legales.html">Mentions légales</a>
         <a href="politique-confidentialite.html">Confidentialité</a>
@@ -116,6 +75,6 @@
       </div>
     </div>
   </footer>
-
+  <script src="assets/js/menu.js"></script>
 </body>
 </html>
