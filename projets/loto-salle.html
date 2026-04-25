@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
- 
+
 :root{
   --bg:#0a0a12;
   --surface:#13131f;
@@ -15,7 +15,7 @@
   --border:rgba(255,255,255,0.08);
   --text:#f0f0ff;
   --muted:rgba(240,240,255,0.45);
- 
+
   /* Couleurs des boules par dizaine */
   --c1:#f5e642;  /* 1-9 : jaune */
   --c2:#3b9ddd;  /* 10-19 : bleu */
@@ -27,7 +27,7 @@
   --c8:#e84b8a;  /* 70-79 : rose */
   --c9:#b0b0b0;  /* 80-90 : gris */
 }
- 
+
 body{
   background:var(--bg);
   color:var(--text);
@@ -35,7 +35,7 @@ body{
   min-height:100vh;
   overflow-x:hidden;
 }
- 
+
 /* BG ANIMÉ */
 body::before{
   content:'';position:fixed;inset:0;
@@ -44,9 +44,9 @@ body::before{
     radial-gradient(ellipse at 80% 80%, rgba(232,64,64,0.06) 0%, transparent 50%);
   pointer-events:none;z-index:0;
 }
- 
+
 .app{position:relative;z-index:1;max-width:1400px;margin:0 auto;padding:24px 20px;}
- 
+
 /* ── HEADER ── */
 .header{
   display:flex;align-items:center;justify-content:space-between;
@@ -57,7 +57,7 @@ body::before{
   background:linear-gradient(90deg,#f5e642,#e84b8a,#3b9ddd);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .header-controls{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
- 
+
 /* BOUTONS */
 .btn{
   padding:10px 22px;border-radius:10px;font-family:'Montserrat',sans-serif;
@@ -71,7 +71,7 @@ body::before{
 .btn-reset{background:var(--card);border:1px solid var(--border);color:var(--muted);}
 .btn-reset:hover{border-color:rgba(255,255,255,0.2);color:var(--text);}
 .btn:disabled{opacity:0.4;cursor:not-allowed;transform:none !important;}
- 
+
 /* SELECT DÉLAI */
 .delay-select{
   padding:10px 16px;background:var(--card);border:1px solid var(--border);
@@ -79,7 +79,7 @@ body::before{
   font-weight:600;font-size:0.88rem;cursor:pointer;outline:none;
 }
 .delay-select:focus{border-color:rgba(59,157,221,0.5);}
- 
+
 /* ── ZONE PRINCIPALE ── */
 .main-grid{
   display:grid;
@@ -87,16 +87,16 @@ body::before{
   gap:24px;
   align-items:start;
 }
- 
+
 /* ── BOULE ACTUELLE ── */
 .current-section{display:flex;flex-direction:column;align-items:center;gap:20px;}
- 
+
 .ball-stage{
   display:flex;align-items:center;justify-content:center;
   position:relative;
   padding:20px 0;
 }
- 
+
 .ball-main{
   width:220px;height:220px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
@@ -106,14 +106,14 @@ body::before{
   box-shadow:0 0 60px rgba(0,0,0,0.5), inset 0 -12px 30px rgba(0,0,0,0.3), inset 0 8px 20px rgba(255,255,255,0.15);
   background:var(--ball-color, #444);
 }
- 
+
 .ball-main::before{
   content:'';position:absolute;top:18px;left:40px;
   width:60px;height:30px;border-radius:50%;
   background:rgba(255,255,255,0.2);
   filter:blur(6px);
 }
- 
+
 .ball-number{
   font-family:'Bebas Neue',sans-serif;
   font-size:7rem;line-height:1;
@@ -121,13 +121,13 @@ body::before{
   text-shadow:0 2px 8px rgba(0,0,0,0.3);
   position:relative;z-index:1;
 }
- 
+
 .ball-label{
   font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;
   color:rgba(0,0,0,0.6);position:relative;z-index:1;
   margin-top:-8px;
 }
- 
+
 .ball-placeholder{
   width:220px;height:220px;border-radius:50%;
   border:3px dashed rgba(255,255,255,0.1);
@@ -135,7 +135,7 @@ body::before{
   color:var(--muted);font-family:'Bebas Neue',sans-serif;
   font-size:1.2rem;letter-spacing:0.1em;
 }
- 
+
 /* ANIMATION BOULE */
 @keyframes ballIn{
   0%{transform:scale(0.3) rotate(-20deg);opacity:0;}
@@ -144,7 +144,7 @@ body::before{
   100%{transform:scale(1) rotate(0deg);opacity:1;}
 }
 .ball-animate{animation:ballIn 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards;}
- 
+
 /* BARRE DE PROGRESSION */
 .timer-bar-wrap{
   width:100%;max-width:280px;
@@ -157,18 +157,18 @@ body::before{
   transition:width linear;
   width:100%;
 }
- 
+
 .timer-text{
   font-size:0.8rem;color:var(--muted);letter-spacing:0.08em;
   font-weight:600;text-align:center;
 }
- 
+
 /* NUMÉROS PRÉCÉDENTS */
 .recent-balls{
   display:flex;gap:10px;flex-wrap:wrap;justify-content:center;
   max-width:480px;
 }
- 
+
 .ball-mini{
   width:52px;height:52px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
@@ -180,15 +180,15 @@ body::before{
 }
 .ball-mini:hover{transform:scale(1.12);}
 .ball-mini:first-child{opacity:1;transform:scale(1.08);}
- 
+
 .recent-label{
   font-size:0.75rem;font-weight:700;letter-spacing:0.1em;
   text-transform:uppercase;color:var(--muted);text-align:center;
 }
- 
+
 /* ── PANNEAU LATÉRAL ── */
 .side-panel{display:flex;flex-direction:column;gap:16px;}
- 
+
 /* STATS */
 .stats-card{
   background:var(--card);border:1px solid var(--border);
@@ -199,18 +199,18 @@ body::before{
 .stat{background:var(--surface);border-radius:10px;padding:12px;text-align:center;}
 .stat-val{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--text);}
 .stat-lbl{font-size:0.68rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
- 
+
 /* GRILLE 1-90 */
 .grid-card{
   background:var(--card);border:1px solid var(--border);
   border-radius:16px;padding:20px;
 }
 .grid-title{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
- 
+
 .numbers-grid{
   display:grid;grid-template-columns:repeat(9,1fr);gap:4px;
 }
- 
+
 .num-cell{
   aspect-ratio:1;border-radius:6px;
   display:flex;align-items:center;justify-content:center;
@@ -227,7 +227,7 @@ body::before{
   transform:scale(1.15);
   box-shadow:0 0 12px var(--cell-color);
 }
- 
+
 /* LÉGENDE */
 .legend{
   display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:12px;
@@ -237,7 +237,7 @@ body::before{
   font-size:0.65rem;font-weight:600;color:var(--muted);
 }
 .legend-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
- 
+
 /* RESPONSIVE */
 @media(max-width:900px){
   .main-grid{grid-template-columns:1fr;}
@@ -253,7 +253,7 @@ body::before{
   .numbers-grid{grid-template-columns:repeat(9,1fr);}
   .num-cell{font-size:0.6rem;}
 }
- 
+
 /* ÉTAT TERMINÉ */
 .finished-banner{
   text-align:center;padding:20px;
@@ -270,7 +270,7 @@ body::before{
 </head>
 <body>
 <div class="app">
- 
+
   <header class="header">
     <div class="logo">🎱 Loto en Salle</div>
     <div class="header-controls">
@@ -284,12 +284,12 @@ body::before{
       <button class="btn btn-reset" id="btnReset">↺ Réinitialiser</button>
     </div>
   </header>
- 
+
   <div class="main-grid">
- 
+
     <!-- ZONE CENTRALE -->
     <div class="current-section">
- 
+
       <div class="ball-stage">
         <div class="ball-placeholder" id="ballPlaceholder">
           PRÊT
@@ -299,27 +299,27 @@ body::before{
           <span class="ball-label" id="ballLabel">boule</span>
         </div>
       </div>
- 
+
       <div class="timer-bar-wrap" id="timerWrap" style="opacity:0">
         <div class="timer-bar" id="timerBar"></div>
       </div>
       <div class="timer-text" id="timerText">Prochain tirage dans --s</div>
- 
+
       <div class="recent-label">Derniers numéros tirés</div>
       <div class="recent-balls" id="recentBalls">
         <span style="color:rgba(255,255,255,0.2);font-size:0.85rem">Les numéros tirés apparaîtront ici</span>
       </div>
- 
+
       <div class="finished-banner" id="finishedBanner" style="display:none">
         <h2>🎉 Tous les numéros ont été tirés !</h2>
         <p style="color:rgba(255,255,255,0.6);margin-top:8px">Réinitialisez pour une nouvelle partie</p>
       </div>
- 
+
     </div>
- 
+
     <!-- PANNEAU LATÉRAL -->
     <div class="side-panel">
- 
+
       <div class="stats-card">
         <div class="stats-title">Statistiques</div>
         <div class="stats-grid">
@@ -333,18 +333,18 @@ body::before{
           </div>
         </div>
       </div>
- 
+
       <div class="grid-card">
         <div class="grid-title">Tableau des numéros</div>
         <div class="numbers-grid" id="numbersGrid"></div>
         <div class="legend" id="legend"></div>
       </div>
- 
+
     </div>
   </div>
- 
+
 </div>
- 
+
 <script>
 const COLORS = [
   null,
@@ -358,7 +358,7 @@ const COLORS = [
   '#e84b8a','#e84b8a','#e84b8a','#e84b8a','#e84b8a','#e84b8a','#e84b8a','#e84b8a','#e84b8a','#e84b8a',
   '#b0b0b0','#b0b0b0','#b0b0b0','#b0b0b0','#b0b0b0','#b0b0b0','#b0b0b0','#b0b0b0','#b0b0b0','#b0b0b0','#b0b0b0',
 ];
- 
+
 const LEGENDS = [
   {range:'1–9',color:'#f5e642'},
   {range:'10–19',color:'#3b9ddd'},
@@ -370,7 +370,7 @@ const LEGENDS = [
   {range:'70–79',color:'#e84b8a'},
   {range:'80–90',color:'#b0b0b0'},
 ];
- 
+
 // State
 let bag = [];
 let drawn = [];
@@ -380,7 +380,7 @@ let timer = null;
 let timerInterval = null;
 let timerLeft = 0;
 let delay = 10;
- 
+
 // DOM
 const btnStart = document.getElementById('btnStart');
 const btnPause = document.getElementById('btnPause');
@@ -399,7 +399,7 @@ const statLeft = document.getElementById('statLeft');
 const numbersGrid = document.getElementById('numbersGrid');
 const finishedBanner = document.getElementById('finishedBanner');
 const legendEl = document.getElementById('legend');
- 
+
 // Build grid
 function buildGrid() {
   numbersGrid.innerHTML = '';
@@ -411,7 +411,7 @@ function buildGrid() {
     numbersGrid.appendChild(cell);
   }
 }
- 
+
 // Build legend
 function buildLegend() {
   legendEl.innerHTML = '';
@@ -422,13 +422,13 @@ function buildLegend() {
     legendEl.appendChild(item);
   });
 }
- 
+
 // Init bag
 function initBag() {
   bag = Array.from({length:90}, (_,i) => i+1);
   drawn = [];
 }
- 
+
 function shuffle(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -436,58 +436,58 @@ function shuffle(arr) {
   }
   return arr;
 }
- 
+
 function getColor(n) { return COLORS[n] || '#888'; }
- 
+
 function drawNumber() {
   if (bag.length === 0) {
     endGame();
     return;
   }
- 
+
   const idx = Math.floor(Math.random() * bag.length);
   const num = bag.splice(idx, 1)[0];
   drawn.unshift(num);
- 
+
   const color = getColor(num);
- 
+
   // Show ball
   ballPlaceholder.style.display = 'none';
   ballMain.style.display = 'flex';
   ballMain.style.background = `radial-gradient(circle at 35% 30%, ${color}dd, ${color}88)`;
   ballMain.style.boxShadow = `0 0 60px ${color}44, 0 0 120px ${color}22, inset 0 -12px 30px rgba(0,0,0,0.3), inset 0 8px 20px rgba(255,255,255,0.15)`;
   ballNumber.textContent = num;
- 
+
   const diz = Math.floor((num - 1) / 10);
   const labels = ['Unités','Dizaines','Vingtaines','Trentaines','Quarantaines','Cinquantaines','Soixantaines','Soixante-dix','Quatre-vingt'];
   ballLabel.textContent = labels[diz] || '';
- 
+
   // Animate
   ballMain.classList.remove('ball-animate');
   void ballMain.offsetWidth;
   ballMain.classList.add('ball-animate');
- 
+
   // Update grid
   const prevDrawn = drawn[1];
   if (prevDrawn) {
     const prevCell = document.getElementById('cell-' + prevDrawn);
     if (prevCell) { prevCell.classList.remove('current'); }
   }
- 
+
   const cell = document.getElementById('cell-' + num);
   if (cell) {
     cell.classList.add('drawn', 'current');
     cell.style.background = color;
     cell.style.setProperty('--cell-color', color);
   }
- 
+
   // Recent balls
   updateRecent();
- 
+
   // Stats
   statDrawn.textContent = drawn.length;
   statLeft.textContent = bag.length;
- 
+
   // Start next timer
   if (bag.length > 0) {
     startTimer();
@@ -495,21 +495,21 @@ function drawNumber() {
     setTimeout(endGame, 2000);
   }
 }
- 
+
 function startTimer() {
   delay = parseInt(delaySelect.value);
   timerLeft = delay;
   timerWrap.style.opacity = '1';
   timerBar.style.transition = 'none';
   timerBar.style.width = '100%';
- 
+
   clearInterval(timerInterval);
   clearTimeout(timer);
- 
+
   void timerBar.offsetWidth;
   timerBar.style.transition = `width ${delay}s linear`;
   timerBar.style.width = '0%';
- 
+
   timerInterval = setInterval(() => {
     timerLeft--;
     timerText.textContent = timerLeft > 0
@@ -517,14 +517,14 @@ function startTimer() {
       : 'Tirage en cours...';
     if (timerLeft <= 0) clearInterval(timerInterval);
   }, 1000);
- 
+
   timerText.textContent = `Prochain tirage dans ${delay}s`;
- 
+
   timer = setTimeout(() => {
     if (running && !paused) drawNumber();
   }, delay * 1000);
 }
- 
+
 function updateRecent() {
   recentBalls.innerHTML = '';
   const toShow = drawn.slice(0, 8);
@@ -537,7 +537,7 @@ function updateRecent() {
     recentBalls.appendChild(b);
   });
 }
- 
+
 function endGame() {
   running = false;
   clearTimer();
@@ -547,12 +547,12 @@ function endGame() {
   btnStart.disabled = true;
   btnPause.disabled = true;
 }
- 
+
 function clearTimer() {
   clearTimeout(timer);
   clearInterval(timerInterval);
 }
- 
+
 // EVENTS
 btnStart.addEventListener('click', () => {
   if (!running) {
@@ -565,7 +565,7 @@ btnStart.addEventListener('click', () => {
     drawNumber();
   }
 });
- 
+
 btnPause.addEventListener('click', () => {
   if (!paused) {
     paused = true;
@@ -579,7 +579,7 @@ btnPause.addEventListener('click', () => {
     drawNumber();
   }
 });
- 
+
 btnReset.addEventListener('click', () => {
   running = false;
   paused = false;
@@ -599,7 +599,7 @@ btnReset.addEventListener('click', () => {
   btnPause.textContent = '⏸ Pause';
   delaySelect.disabled = false;
 });
- 
+
 // INIT
 buildGrid();
 buildLegend();
