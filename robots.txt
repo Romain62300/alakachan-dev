@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://romain62300.github.io/alakachan-dev/sitemap.xml
