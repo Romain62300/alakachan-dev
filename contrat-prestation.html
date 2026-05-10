@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contrat de prestation | Alakachan Dev</title>
+  <meta name="description" content="Lisez et signez votre contrat de prestation avec Alakachan Dev. Toutes les conditions sont claires et transparentes.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .contrat-wrap { max-width: 860px; margin: 0 auto; }
+    .contrat-article { background: #fff; border-radius: 24px; padding: 36px; box-shadow: 0 15px 40px rgba(0,0,0,0.06); margin-bottom: 28px; }
+    .contrat-article h2 { font-size: 1rem; font-weight: 800; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--color-bg-soft); }
+    .contrat-parties { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .partie-bloc { background: var(--color-bg-soft); border-radius: 16px; padding: 24px; }
+    .partie-bloc h3 { font-size: 0.9rem; font-weight: 700; text-transform: uppercase; color: var(--color-primary); letter-spacing: 0.06em; margin-bottom: 16px; }
+    .partie-ligne { display: flex; gap: 12px; margin-bottom: 10px; font-size: 0.95rem; }
+    .partie-ligne dt { font-weight: 600; color: var(--color-text); min-width: 100px; flex-shrink: 0; }
+    .partie-ligne dd { color: var(--color-text-light); }
+    .partie-ligne dd.a-remplir { color: #94a3b8; font-style: italic; }
+    .contrat-table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+    .contrat-table th { background: var(--color-primary); color: #fff; padding: 10px 14px; text-align: left; font-weight: 600; }
+    .contrat-table td { padding: 10px 14px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+    .contrat-table tr:nth-child(even) td { background: var(--color-bg-soft); }
+    .contrat-table tr.total td { font-weight: 700; background: var(--color-bg-soft); color: var(--color-text); border-top: 2px solid var(--color-border); }
+    .contrat-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .contrat-list li { position: relative; padding-left: 22px; color: var(--color-text-light); line-height: 1.65; font-size: 0.95rem; }
+    .contrat-list li::before { content: "•"; position: absolute; left: 4px; color: var(--color-primary); font-size: 1.1rem; line-height: 1; top: 2px; }
+    .contrat-list li strong { color: var(--color-text); }
+    .notice-box { background: #fff7ed; border-left: 4px solid #f59e0b; border-radius: 0 12px 12px 0; padding: 14px 18px; font-size: 0.93rem; color: #92400e; margin-bottom: 24px; }
+    .formule-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+    .formule-btn { padding: 12px; border: 2px solid var(--color-border); border-radius: 12px; text-align: center; cursor: pointer; transition: border-color 0.2s, background 0.2s; font-size: 0.92rem; font-weight: 600; background: #fff; }
+    .formule-btn:hover { border-color: var(--color-primary); background: var(--color-bg-soft); }
+    .formule-btn.selected { border-color: var(--color-primary); background: rgba(37,99,235,0.07); color: var(--color-primary); }
+    .sign-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px; }
+    .sign-bloc { background: var(--color-bg-soft); border-radius: 16px; padding: 24px; }
+    .sign-bloc h3 { font-size: 0.9rem; font-weight: 700; text-transform: uppercase; color: var(--color-primary); letter-spacing: 0.06em; margin-bottom: 16px; }
+    .sign-field { margin-bottom: 14px; }
+    .sign-field label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 6px; }
+    .sign-field input { width: 100%; padding: 10px 14px; border: 1.5px solid var(--color-border); border-radius: 10px; font-family: "Inter", sans-serif; font-size: 0.95rem; background: #fff; outline: none; transition: border-color 0.2s; }
+    .sign-field input:focus { border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+    .sign-canvas-wrap { margin-top: 6px; }
+    .sign-canvas-wrap canvas { border: 1.5px solid var(--color-border); border-radius: 10px; width: 100%; height: 120px; background: #fff; cursor: crosshair; touch-action: none; display: block; }
+    .sign-canvas-wrap small { font-size: 0.8rem; color: var(--color-text-light); margin-top: 4px; display: block; }
+    .sign-clear { margin-top: 6px; background: none; border: 1px solid var(--color-border); border-radius: 8px; padding: 5px 12px; font-size: 0.82rem; cursor: pointer; color: var(--color-text-light); font-family: "Inter", sans-serif; }
+    .sign-clear:hover { color: var(--color-primary); border-color: var(--color-primary); }
+    .contrat-annulations { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .annul-bloc { background: var(--color-bg-soft); border-radius: 14px; padding: 18px; }
+    .annul-bloc h4 { font-size: 0.88rem; font-weight: 700; color: var(--color-primary); margin-bottom: 8px; }
+    .annul-bloc p { font-size: 0.9rem; color: var(--color-text-light); }
+    .print-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: var(--color-bg-soft); border: 1.5px solid var(--color-border); border-radius: 12px; font-size: 0.9rem; font-weight: 600; cursor: pointer; color: var(--color-text); font-family: "Inter", sans-serif; transition: border-color 0.2s; margin-bottom: 24px; }
+    .print-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
+    @media (max-width: 640px) {
+      .contrat-parties, .sign-grid, .contrat-annulations, .formule-grid { grid-template-columns: 1fr; }
+    }
+    @media print {
+      .site-header, .site-footer, .print-btn, .hero, .cta-section { display: none !important; }
+      .services-preview { padding: 20px 0 !important; }
+      .contrat-article { box-shadow: none !important; border: 1px solid #ddd; }
+      .sign-canvas-wrap canvas { border: 1px solid #aaa !important; }
+    }
+  </style>
+</head>
+<body class="page-contact">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Alakachan <span>Dev</span></a>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="realisations.html">Réalisations</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="devis.html" class="btn btn-primary">Demander un devis</a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <div id="nav-overlay"></div>
+ 
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <p class="eyebrow">Formaliser votre projet</p>
+          <h1>Contrat de prestation</h1>
+          <p class="hero-text">Un contrat clair, sans jargon inutile. Lisez, remplissez les informations manquantes, signez — et on commence.</p>
+        </div>
+        <div class="hero-card">
+          <h2>Deux exemplaires</h2>
+          <p>Ce contrat est établi en deux exemplaires : un pour vous, un pour moi. Imprimez ou téléchargez une fois rempli.</p>
+        </div>
+      </div>
+    </section>
+ 
+    <section class="services-preview">
+      <div class="container contrat-wrap">
+ 
+        <button class="print-btn" onclick="window.print()">🖨 Imprimer / Télécharger en PDF</button>
+ 
+        <!-- Article 1 — Parties -->
+        <div class="contrat-article">
+          <h2>Article 1 — Identification des parties</h2>
+          <div class="contrat-parties">
+            <div class="partie-bloc">
+              <h3>Le prestataire</h3>
+              <dl>
+                <div class="partie-ligne"><dt>Nom</dt><dd>Romain Monier</dd></div>
+                <div class="partie-ligne"><dt>Entreprise</dt><dd>Alakachan Dev</dd></div>
+                <div class="partie-ligne"><dt>Statut</dt><dd>Auto-entrepreneur</dd></div>
+                <div class="partie-ligne"><dt>SIRET</dt><dd id="siret-val">À compléter</dd></div>
+                <div class="partie-ligne"><dt>Adresse</dt><dd>Lens (62)</dd></div>
+                <div class="partie-ligne"><dt>Email</dt><dd>contact@alakachan-dev.fr</dd></div>
+                <div class="partie-ligne"><dt>Site web</dt><dd>alakachan-dev.fr</dd></div>
+              </dl>
+            </div>
+            <div class="partie-bloc">
+              <h3>Le client</h3>
+              <dl>
+                <div class="partie-ligne"><dt>Nom</dt><dd><input id="c-nom" placeholder="Nom / Raison sociale" style="border:none;border-bottom:1px solid #cbd5e1;outline:none;font-family:Inter,sans-serif;font-size:0.93rem;width:100%;background:transparent;padding:2px 0;"></dd></div>
+                <div class="partie-ligne"><dt>Adresse</dt><dd><input id="c-adresse" placeholder="Adresse complète" style="border:none;border-bottom:1px solid #cbd5e1;outline:none;font-family:Inter,sans-serif;font-size:0.93rem;width:100%;background:transparent;padding:2px 0;"></dd></div>
+                <div class="partie-ligne"><dt>Email</dt><dd><input id="c-email" type="email" placeholder="email@exemple.fr" style="border:none;border-bottom:1px solid #cbd5e1;outline:none;font-family:Inter,sans-serif;font-size:0.93rem;width:100%;background:transparent;padding:2px 0;"></dd></div>
+                <div class="partie-ligne"><dt>Téléphone</dt><dd><input id="c-tel" placeholder="06 xx xx xx xx" style="border:none;border-bottom:1px solid #cbd5e1;outline:none;font-family:Inter,sans-serif;font-size:0.93rem;width:100%;background:transparent;padding:2px 0;"></dd></div>
+                <div class="partie-ligne"><dt>SIRET</dt><dd><input id="c-siret" placeholder="Si professionnel" style="border:none;border-bottom:1px solid #cbd5e1;outline:none;font-family:Inter,sans-serif;font-size:0.93rem;width:100%;background:transparent;padding:2px 0;"></dd></div>
+              </dl>
+            </div>
+          </div>
+        </div>
+ 
+        <!-- Article 2 — Prestation -->
+        <div class="contrat-article">
+          <h2>Article 2 — Description de la prestation</h2>
+          <div style="margin-bottom:20px;">
+            <p style="font-weight:600;margin-bottom:12px;font-size:0.95rem;">Formule choisie</p>
+            <div class="formule-grid">
+              <div class="formule-btn" onclick="selectFormule(this,'One page — 590 €')">One page<br><strong>590 €</strong></div>
+              <div class="formule-btn" onclick="selectFormule(this,'Site vitrine — 890 €')">Site vitrine<br><strong>890 €</strong></div>
+              <div class="formule-btn" onclick="selectFormule(this,'Site complet — 1 290 €')">Site complet<br><strong>1 290 €</strong></div>
+            </div>
+          </div>
+          <div style="margin-bottom:16px;">
+            <label style="font-weight:600;font-size:0.93rem;display:block;margin-bottom:8px;">Description détaillée du projet</label>
+            <textarea id="desc-projet" placeholder="Ex : Création d'un site vitrine 5 pages pour une auto-école à Lens, avec formulaire de contact et carte Google Maps." style="width:100%;padding:12px 14px;border:1.5px solid var(--color-border);border-radius:12px;font-family:Inter,sans-serif;font-size:0.93rem;min-height:90px;resize:vertical;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--color-primary)'" onblur="this.style.borderColor='var(--color-border)'"></textarea>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div>
+              <label style="font-weight:600;font-size:0.93rem;display:block;margin-bottom:8px;">Pages incluses</label>
+              <textarea id="pages-incluses" placeholder="Ex : Accueil, Services, À propos, Contact, Mentions légales" style="width:100%;padding:12px 14px;border:1.5px solid var(--color-border);border-radius:12px;font-family:Inter,sans-serif;font-size:0.93rem;min-height:80px;resize:vertical;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--color-primary)'" onblur="this.style.borderColor='var(--color-border)'"></textarea>
+            </div>
+            <div>
+              <label style="font-weight:600;font-size:0.93rem;display:block;margin-bottom:8px;">Fonctionnalités incluses</label>
+              <textarea id="fonctionnalites" placeholder="Ex : Formulaire de contact, Responsive mobile, SEO de base, Bandeau cookie" style="width:100%;padding:12px 14px;border:1.5px solid var(--color-border);border-radius:12px;font-family:Inter,sans-serif;font-size:0.93rem;min-height:80px;resize:vertical;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--color-primary)'" onblur="this.style.borderColor='var(--color-border)'"></textarea>
+            </div>
+          </div>
+          <div style="margin-top:18px;">
+            <p style="font-weight:600;font-size:0.93rem;margin-bottom:10px;">Ce qui n'est PAS inclus (sauf mention contraire ci-dessus)</p>
+            <ul class="contrat-list">
+              <li>La rédaction des textes du site — le client fournit ses propres contenus</li>
+              <li>Les photos et visuels — le client fournit ses images ou achète des visuels</li>
+              <li>Le nom de domaine et l'hébergement — frais à la charge du client</li>
+              <li>Les modifications importantes après validation finale</li>
+              <li>Le référencement payant (Google Ads, etc.)</li>
+            </ul>
+          </div>
+        </div>
+ 
+        <!-- Article 3 — Tarifs -->
+        <div class="contrat-article">
+          <h2>Article 3 — Tarifs et paiement</h2>
+          <table class="contrat-table" style="margin-bottom:16px;">
+            <thead><tr><th>Description</th><th>Montant HT</th><th>Montant TTC</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>Création du site web (<span id="formule-label">formule à sélectionner</span>)</td>
+                <td><input id="montant-ht" placeholder="_____ €" style="border:none;border-bottom:1px solid #cbd5e1;outline:none;font-family:Inter,sans-serif;font-size:0.93rem;width:90px;background:transparent;text-align:center;"></td>
+                <td><input id="montant-ttc" placeholder="_____ €" style="border:none;border-bottom:1px solid #cbd5e1;outline:none;font-family:Inter,sans-serif;font-size:0.93rem;width:90px;background:transparent;text-align:center;"></td>
+              </tr>
+              <tr class="total">
+                <td><strong>TOTAL</strong></td>
+                <td style="text-align:center;" id="total-ht">—</td>
+                <td style="text-align:center;" id="total-ttc">—</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size:0.87rem;color:var(--color-text-light);margin-bottom:18px;font-style:italic;">TVA non applicable — article 293B du CGI (auto-entrepreneur en franchise de base de TVA).</p>
+          <ul class="contrat-list">
+            <li><strong>Acompte de 30 %</strong> à la signature — non remboursable après démarrage des travaux.</li>
+            <li><strong>Solde de 70 %</strong> à la livraison, sous 5 jours ouvrés, avant remise des fichiers et mise en ligne.</li>
+            <li>Paiement par <strong>virement bancaire uniquement</strong>. Coordonnées communiquées avec le devis.</li>
+            <li>Tout retard de paiement entraîne une pénalité de 10 % du montant restant dû par mois de retard.</li>
+          </ul>
+          <div style="margin-top:18px;background:var(--color-bg-soft);border-radius:12px;padding:16px;display:flex;gap:32px;flex-wrap:wrap;">
+            <div><span style="font-size:0.88rem;color:var(--color-text-light);">Acompte (30 %)</span><br><input id="acompte" placeholder="_____ €" style="border:none;border-bottom:1.5px solid var(--color-primary);outline:none;font-family:Inter,sans-serif;font-size:1.1rem;font-weight:700;width:110px;background:transparent;color:var(--color-primary);"></div>
+            <div><span style="font-size:0.88rem;color:var(--color-text-light);">Solde (70 %)</span><br><input id="solde" placeholder="_____ €" style="border:none;border-bottom:1.5px solid var(--color-primary);outline:none;font-family:Inter,sans-serif;font-size:1.1rem;font-weight:700;width:110px;background:transparent;color:var(--color-primary);"></div>
+          </div>
+        </div>
+ 
+        <!-- Article 4 — Frais annexes -->
+        <div class="contrat-article">
+          <h2>Article 4 — Frais annexes à la charge du client</h2>
+          <div class="notice-box">Ces frais ne sont PAS inclus dans le tarif de création. Ils sont obligatoires pour mettre le site en ligne.</div>
+          <table class="contrat-table">
+            <thead><tr><th>Poste de dépense</th><th>Prix indicatif</th><th>Fréquence</th><th>Fournisseur conseillé</th></tr></thead>
+            <tbody>
+              <tr><td>Nom de domaine (.fr ou .com)</td><td>7 à 15 €</td><td>Par an</td><td>OVH, Hostinger</td></tr>
+              <tr><td>Hébergement web (site PHP/BDD)</td><td>3 à 10 €</td><td>Par mois</td><td>O2Switch, OVH</td></tr>
+              <tr><td>Hébergement (site HTML statique)</td><td>Gratuit</td><td>—</td><td>GitHub Pages</td></tr>
+              <tr><td>Certificat SSL (HTTPS)</td><td>Gratuit</td><td>—</td><td>Inclus chez la plupart</td></tr>
+              <tr><td>Maintenance mensuelle (optionnel)</td><td>49 €</td><td>Par mois</td><td>Alakachan Dev</td></tr>
+            </tbody>
+          </table>
+        </div>
+ 
+        <!-- Article 5 — Délais -->
+        <div class="contrat-article">
+          <h2>Article 5 — Délais et livraison</h2>
+          <table class="contrat-table" style="margin-bottom:18px;">
+            <thead><tr><th>Étape</th><th>Détail</th></tr></thead>
+            <tbody>
+              <tr><td>Date de début</td><td>À la réception de l'acompte ET des contenus client</td></tr>
+              <tr><td>Délai de réalisation</td><td>1 à 3 semaines selon la formule</td></tr>
+              <tr><td>Date de livraison estimée</td><td><input placeholder="À compléter" style="border:none;border-bottom:1px solid #cbd5e1;outline:none;font-family:Inter,sans-serif;font-size:0.93rem;width:200px;background:transparent;"></td></tr>
+              <tr><td>Corrections incluses</td><td>2 allers-retours (une liste consolidée par aller-retour)</td></tr>
+            </tbody>
+          </table>
+          <ul class="contrat-list">
+            <li>Fournir tous les contenus (textes, images, logo) dans les <strong>3 jours suivant la signature</strong>.</li>
+            <li>Répondre aux demandes de validation sous <strong>48h maximum</strong>.</li>
+            <li>Tout retard côté client décale automatiquement la date de livraison.</li>
+            <li>Si les contenus ne sont pas fournis sous 7 jours après relance, le prestataire peut suspendre le projet.</li>
+          </ul>
+        </div>
+ 
+        <!-- Article 6 — Propriété & droits -->
+        <div class="contrat-article">
+          <h2>Article 6 — Propriété, droits et RGPD</h2>
+          <ul class="contrat-list">
+            <li>Le client devient <strong>propriétaire du site</strong> et de son code source après paiement intégral.</li>
+            <li>Avant paiement intégral, le prestataire reste propriétaire des fichiers livrés.</li>
+            <li>Le prestataire se réserve le droit de mentionner ce projet dans son portfolio, sauf opposition écrite du client.</li>
+            <li>Le client est seul responsable des textes, images et informations fournis et garantit disposer des droits sur ceux-ci.</li>
+            <li><strong>RGPD :</strong> Si le site intègre un formulaire ou traitement de données, le client est responsable de traitement au sens du RGPD et s'engage à respecter les obligations légales (mentions d'information, droits des utilisateurs).</li>
+          </ul>
+        </div>
+ 
+        <!-- Article 7 — CGV -->
+        <div class="contrat-article">
+          <h2>Article 7 — Conditions générales</h2>
+          <div class="contrat-annulations" style="margin-bottom:18px;">
+            <div class="annul-bloc">
+              <h4>Annulation avant démarrage</h4>
+              <p>Acompte remboursé intégralement.</p>
+            </div>
+            <div class="annul-bloc">
+              <h4>Annulation après démarrage (client)</h4>
+              <p>Acompte conservé par le prestataire.</p>
+            </div>
+            <div class="annul-bloc">
+              <h4>Annulation par le prestataire</h4>
+              <p>Acompte remboursé + indemnité de 10 %.</p>
+            </div>
+            <div class="annul-bloc">
+              <h4>Garantie après livraison</h4>
+              <p>30 jours de corrections gratuites (bugs uniquement, pas les nouvelles demandes).</p>
+            </div>
+          </div>
+          <ul class="contrat-list">
+            <li>Ce contrat est soumis au <strong>droit français</strong>.</li>
+            <li>En cas de litige, une solution amiable sera recherchée en priorité.</li>
+            <li>À défaut, le tribunal compétent sera celui de <strong>Lens (62)</strong>.</li>
+          </ul>
+        </div>
+ 
+        <!-- Article 8 — Signatures -->
+        <div class="contrat-article">
+          <h2>Article 8 — Signatures</h2>
+          <p style="color:var(--color-text-light);font-size:0.93rem;margin-bottom:20px;">En signant ce contrat, les deux parties déclarent avoir lu, compris et accepté l'ensemble des conditions ci-dessus ainsi que les <a href="cgv.html" style="color:var(--color-primary);">CGV disponibles sur alakachan-dev.fr</a>.</p>
+          <div class="sign-grid">
+            <div class="sign-bloc">
+              <h3>Le prestataire</h3>
+              <div class="sign-field"><label>Nom</label><input value="Romain Monier — Alakachan Dev" readonly style="background:#f1f5f9;color:#64748b;"></div>
+              <div class="sign-field"><label>Date</label><input id="date-prest" type="date"></div>
+              <div class="sign-canvas-wrap">
+                <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:6px;">Signature</label>
+                <canvas id="canvas-prest" width="380" height="120"></canvas>
+                <small>Signez dans le cadre ci-dessus</small>
+                <button class="sign-clear" onclick="clearCanvas('canvas-prest')">Effacer</button>
+              </div>
+            </div>
+            <div class="sign-bloc">
+              <h3>Le client</h3>
+              <div class="sign-field"><label>Nom</label><input id="sign-client-nom" placeholder="Votre nom"></div>
+              <div class="sign-field"><label>Date</label><input id="date-client" type="date"></div>
+              <div class="sign-canvas-wrap">
+                <label style="font-weight:600;font-size:0.9rem;display:block;margin-bottom:6px;">Signature</label>
+                <canvas id="canvas-client" width="380" height="120"></canvas>
+                <small>Signez dans le cadre ci-dessus</small>
+                <button class="sign-clear" onclick="clearCanvas('canvas-client')">Effacer</button>
+              </div>
+            </div>
+          </div>
+          <p style="font-size:0.85rem;color:var(--color-text-light);margin-top:18px;text-align:center;">Document établi en deux exemplaires originaux, un pour chaque partie.</p>
+        </div>
+ 
+        <button class="btn btn-primary" onclick="window.print()" style="width:100%;font-size:1.05rem;">🖨 Imprimer / Télécharger en PDF</button>
+ 
+      </div>
+    </section>
+  </main>
+ 
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-brand">Alakachan Dev</p>
+        <p>Création de sites web — Lens (62)</p>
+      </div>
+      <div class="footer-links">
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="politique-confidentialite.html">Confidentialité</a>
+        <a href="politique-cookies.html">Cookies</a>
+        <a href="cgv.html">CGV</a>
+      </div>
+    </div>
+  </footer>
+ 
+  <script src="assets/js/menu.js"></script>
+  <script>
+  // ── Sélection formule ──
+  let formuleSelected = '';
+  function selectFormule(el, label) {
+    document.querySelectorAll('.formule-btn').forEach(b => b.classList.remove('selected'));
+    el.classList.add('selected');
+    formuleSelected = label;
+    document.getElementById('formule-label').textContent = label;
+    // Pré-remplir le montant
+    const prices = { 'One page — 590 €': '590', 'Site vitrine — 890 €': '890', 'Site complet — 1 290 €': '1 290' };
+    const p = prices[label] || '';
+    document.getElementById('montant-ht').value = p ? p + ' €' : '';
+    document.getElementById('montant-ttc').value = p ? p + ' €' : '';
+    document.getElementById('total-ht').textContent = p ? p + ' €' : '—';
+    document.getElementById('total-ttc').textContent = p ? p + ' €' : '—';
+    const n = parseFloat(p.replace(' ','')) || 0;
+    document.getElementById('acompte').value = n ? Math.round(n * 0.3) + ' €' : '';
+    document.getElementById('solde').value = n ? Math.round(n * 0.7) + ' €' : '';
+  }
+ 
+  // ── Signature canvas ──
+  function initCanvas(id) {
+    const canvas = document.getElementById(id);
+    const ctx = canvas.getContext('2d');
+    let drawing = false;
+    ctx.strokeStyle = '#1e293b'; ctx.lineWidth = 2; ctx.lineCap = 'round';
+    const getPos = e => {
+      const r = canvas.getBoundingClientRect();
+      const src = e.touches ? e.touches[0] : e;
+      return { x: (src.clientX - r.left) * (canvas.width / r.width), y: (src.clientY - r.top) * (canvas.height / r.height) };
+    };
+    canvas.addEventListener('mousedown', e => { drawing = true; ctx.beginPath(); const p = getPos(e); ctx.moveTo(p.x, p.y); });
+    canvas.addEventListener('mousemove', e => { if (!drawing) return; const p = getPos(e); ctx.lineTo(p.x, p.y); ctx.stroke(); });
+    canvas.addEventListener('mouseup', () => drawing = false);
+    canvas.addEventListener('mouseleave', () => drawing = false);
+    canvas.addEventListener('touchstart', e => { e.preventDefault(); drawing = true; ctx.beginPath(); const p = getPos(e); ctx.moveTo(p.x, p.y); }, { passive: false });
+    canvas.addEventListener('touchmove', e => { e.preventDefault(); if (!drawing) return; const p = getPos(e); ctx.lineTo(p.x, p.y); ctx.stroke(); }, { passive: false });
+    canvas.addEventListener('touchend', () => drawing = false);
+  }
+  function clearCanvas(id) { const c = document.getElementById(id); c.getContext('2d').clearRect(0, 0, c.width, c.height); }
+  initCanvas('canvas-prest');
+  initCanvas('canvas-client');
+  </script>
+</body>
+</html>

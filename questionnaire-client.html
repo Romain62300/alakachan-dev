@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questionnaire client | Alakachan Dev</title>
+  <meta name="description" content="Remplissez ce questionnaire pour que je puisse créer votre site web sur mesure. Réponse sous 48h.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .q-section { background: #fff; border-radius: 24px; padding: 36px; box-shadow: 0 15px 40px rgba(0,0,0,0.06); margin-bottom: 32px; }
+    .q-section-title { font-size: 1.1rem; font-weight: 800; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 28px; padding-bottom: 14px; border-bottom: 2px solid var(--color-bg-soft); }
+    .q-block { margin-bottom: 28px; }
+    .q-block:last-child { margin-bottom: 0; }
+    .q-label { font-weight: 600; font-size: 0.97rem; margin-bottom: 10px; color: var(--color-text); display: block; }
+    .q-label span { color: var(--color-text-light); font-weight: 400; font-size: 0.88rem; }
+    .q-hint { font-size: 0.87rem; color: var(--color-text-light); margin-bottom: 10px; }
+    .q-input, .q-textarea, .q-select {
+      width: 100%; padding: 13px 16px; border: 1.5px solid var(--color-border);
+      border-radius: 12px; font-family: "Inter", sans-serif; font-size: 1rem;
+      color: var(--color-text); background: var(--color-surface); transition: border-color 0.2s, box-shadow 0.2s; outline: none;
+    }
+    .q-input:focus, .q-textarea:focus, .q-select:focus { border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+    .q-textarea { resize: vertical; min-height: 100px; }
+    .q-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 44px; cursor: pointer; }
+    .q-checkboxes { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+    .q-checkbox-item { display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 10px 14px; border: 1.5px solid var(--color-border); border-radius: 10px; transition: border-color 0.2s, background 0.2s; user-select: none; }
+    .q-checkbox-item:hover { border-color: var(--color-primary); background: var(--color-bg-soft); }
+    .q-checkbox-item input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--color-primary); flex-shrink: 0; cursor: pointer; }
+    .q-checkbox-item.checked { border-color: var(--color-primary); background: rgba(37,99,235,0.06); }
+    .q-radio-group { display: flex; flex-wrap: wrap; gap: 10px; }
+    .q-radio-item { display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 10px 16px; border: 1.5px solid var(--color-border); border-radius: 10px; transition: border-color 0.2s, background 0.2s; user-select: none; }
+    .q-radio-item:hover { border-color: var(--color-primary); background: var(--color-bg-soft); }
+    .q-radio-item input[type="radio"] { width: 18px; height: 18px; accent-color: var(--color-primary); flex-shrink: 0; cursor: pointer; }
+    .q-radio-item.checked { border-color: var(--color-primary); background: rgba(37,99,235,0.06); }
+    .q-part2-notice { background: var(--color-bg-soft); border-left: 4px solid var(--color-primary); border-radius: 0 12px 12px 0; padding: 14px 18px; margin-bottom: 32px; font-size: 0.95rem; color: var(--color-text-light); }
+    .q-part2-notice strong { color: var(--color-text); }
+    .q-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 640px) { .q-row { grid-template-columns: 1fr; } .q-checkboxes { grid-template-columns: 1fr 1fr; } }
+    .form-wrap { max-width: 800px; margin: 0 auto; }
+  </style>
+</head>
+<body class="page-contact">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Alakachan <span>Dev</span></a>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="realisations.html">Réalisations</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="devis.html" class="btn btn-primary">Demander un devis</a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <div id="nav-overlay"></div>
+ 
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <p class="eyebrow">Votre projet en détail</p>
+          <h1>Le questionnaire client</h1>
+          <p class="hero-text">Plus vous répondez précisément, plus le site que je vous livre correspond exactement à ce que vous voulez. Comptez 5 à 10 minutes.</p>
+        </div>
+        <div class="hero-card">
+          <h2>Ce que ça change</h2>
+          <p>Ce questionnaire remplace les allers-retours par email. Je reçois vos réponses, je les lis, et je vous envoie un devis clair sous 48h.</p>
+        </div>
+      </div>
+    </section>
+ 
+    <section class="services-preview">
+      <div class="container form-wrap">
+ 
+        <form id="questionnaire-form" action="https://formspree.io/f/meepwezw" method="POST">
+          <input type="hidden" name="_subject" value="Nouveau questionnaire client — Alakachan Dev">
+          <input type="text" name="_gotcha" style="display:none">
+ 
+          <!-- ── Infos de base ── -->
+          <div class="q-section">
+            <p class="q-section-title">Vos informations</p>
+            <div class="q-row">
+              <div class="q-block">
+                <label class="q-label" for="q-nom">Nom / Prénom</label>
+                <input class="q-input" type="text" id="q-nom" name="nom" placeholder="Jean Dupont" required>
+              </div>
+              <div class="q-block">
+                <label class="q-label" for="q-activite">Activité / Métier</label>
+                <input class="q-input" type="text" id="q-activite" name="activite" placeholder="Plombier, coach sportif, association...">
+              </div>
+            </div>
+            <div class="q-row">
+              <div class="q-block">
+                <label class="q-label" for="q-email">Email</label>
+                <input class="q-input" type="email" id="q-email" name="email" placeholder="vous@exemple.fr" required>
+              </div>
+              <div class="q-block">
+                <label class="q-label" for="q-tel">Téléphone <span>(facultatif)</span></label>
+                <input class="q-input" type="tel" id="q-tel" name="telephone" placeholder="06 12 34 56 78">
+              </div>
+            </div>
+            <div class="q-block">
+              <label class="q-label">Formule envisagée</label>
+              <div class="q-radio-group">
+                <label class="q-radio-item"><input type="radio" name="formule" value="One page — 590 €"> One page — 590 €</label>
+                <label class="q-radio-item"><input type="radio" name="formule" value="Site vitrine — 890 €"> Site vitrine — 890 €</label>
+                <label class="q-radio-item"><input type="radio" name="formule" value="Site complet — 1 290 €"> Site complet — 1 290 €</label>
+                <label class="q-radio-item"><input type="radio" name="formule" value="Je ne sais pas encore"> Je ne sais pas encore</label>
+              </div>
+            </div>
+          </div>
+ 
+          <!-- ── Votre activité ── -->
+          <div class="q-section">
+            <p class="q-section-title">Votre activité</p>
+            <div class="q-block">
+              <label class="q-label" for="q-description">Décrivez votre activité en 2-3 phrases <span>(comme à un ami)</span></label>
+              <textarea class="q-textarea" id="q-description" name="description_activite" placeholder="Je suis électricien indépendant à Lens, je travaille pour des particuliers et des petites entreprises..."></textarea>
+            </div>
+            <div class="q-block">
+              <label class="q-label" for="q-clients">Qui sont vos clients ?</label>
+              <div class="q-checkboxes">
+                <label class="q-checkbox-item"><input type="checkbox" name="clients[]" value="Particuliers"> Particuliers</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="clients[]" value="Professionnels"> Professionnels</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="clients[]" value="Associations"> Associations</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="clients[]" value="Communes / collectivités"> Communes / collectivités</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="clients[]" value="Autre"> Autre</label>
+              </div>
+            </div>
+            <div class="q-block">
+              <label class="q-label" for="q-zone">Zone géographique d'intervention</label>
+              <input class="q-input" type="text" id="q-zone" name="zone" placeholder="Lens, Hauts-de-France, toute la France...">
+            </div>
+            <div class="q-block">
+              <label class="q-label" for="q-pointfort">Qu'est-ce qui vous distingue de vos concurrents ? Votre point fort ?</label>
+              <textarea class="q-textarea" id="q-pointfort" name="point_fort" placeholder="Mon délai d'intervention, mes tarifs transparents, mon expérience de 15 ans..."></textarea>
+            </div>
+          </div>
+ 
+          <!-- ── Objectif ── -->
+          <div class="q-section">
+            <p class="q-section-title">Objectif du site</p>
+            <div class="q-block">
+              <label class="q-label">Quel est le but principal de ce site ?</label>
+              <div class="q-checkboxes">
+                <label class="q-checkbox-item"><input type="checkbox" name="objectif[]" value="Être trouvé sur Google"> Être trouvé sur Google</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="objectif[]" value="Donner confiance aux prospects"> Donner confiance aux prospects</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="objectif[]" value="Recevoir des demandes de devis"> Recevoir des demandes de devis</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="objectif[]" value="Présenter mon activité"> Présenter mon activité</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="objectif[]" value="Remplacer une carte de visite"> Remplacer une carte de visite</label>
+              </div>
+            </div>
+            <div class="q-block">
+              <label class="q-label" for="q-action">Quelle est la seule action que vous voulez que le visiteur fasse ?</label>
+              <input class="q-input" type="text" id="q-action" name="action_visiteur" placeholder="M'appeler, remplir un formulaire, venir en magasin...">
+            </div>
+            <div class="q-block">
+              <label class="q-label" for="q-message-cle">Quel message voulez-vous que le visiteur retienne ?</label>
+              <textarea class="q-textarea" id="q-message-cle" name="message_cle" style="min-height:80px" placeholder="Je suis le plombier le plus rapide du secteur, disponible 7j/7..."></textarea>
+            </div>
+          </div>
+ 
+          <!-- ── Contenu ── -->
+          <div class="q-section">
+            <p class="q-section-title">Contenu</p>
+            <div class="q-block">
+              <label class="q-label">Avez-vous déjà un logo ?</label>
+              <div class="q-radio-group">
+                <label class="q-radio-item"><input type="radio" name="logo" value="Oui — PNG"> Oui — PNG</label>
+                <label class="q-radio-item"><input type="radio" name="logo" value="Oui — SVG"> Oui — SVG</label>
+                <label class="q-radio-item"><input type="radio" name="logo" value="Oui — autre format"> Oui — autre format</label>
+                <label class="q-radio-item"><input type="radio" name="logo" value="Non — à créer"> Non — à créer</label>
+              </div>
+            </div>
+            <div class="q-block">
+              <label class="q-label">Avez-vous des photos (de vous, de votre activité, de vos produits) ?</label>
+              <div class="q-radio-group">
+                <label class="q-radio-item"><input type="radio" name="photos" value="Oui, plusieurs"> Oui, plusieurs</label>
+                <label class="q-radio-item"><input type="radio" name="photos" value="Oui, quelques-unes"> Oui, quelques-unes</label>
+                <label class="q-radio-item"><input type="radio" name="photos" value="Non"> Non</label>
+              </div>
+            </div>
+            <div class="q-block">
+              <label class="q-label">Les textes du site ?</label>
+              <div class="q-radio-group">
+                <label class="q-radio-item"><input type="radio" name="textes" value="Prêts"> Prêts</label>
+                <label class="q-radio-item"><input type="radio" name="textes" value="Partiellement prêts"> Partiellement prêts</label>
+                <label class="q-radio-item"><input type="radio" name="textes" value="À rédiger — j'ai besoin d'aide"> À rédiger — j'ai besoin d'aide</label>
+              </div>
+            </div>
+            <div class="q-block">
+              <label class="q-label">Informations obligatoires à faire apparaître</label>
+              <div class="q-checkboxes">
+                <label class="q-checkbox-item"><input type="checkbox" name="infos[]" value="Horaires"> Horaires</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="infos[]" value="Adresse"> Adresse</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="infos[]" value="Téléphone"> Téléphone</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="infos[]" value="Tarifs"> Tarifs</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="infos[]" value="Formulaire de contact"> Formulaire de contact</label>
+              </div>
+            </div>
+            <div class="q-block">
+              <label class="q-label" for="q-reseaux">Réseaux sociaux à relier au site <span>(facultatif)</span></label>
+              <input class="q-input" type="text" id="q-reseaux" name="reseaux_sociaux" placeholder="https://facebook.com/monactivite, https://instagram.com/...">
+            </div>
+          </div>
+ 
+          <!-- ── Style ── -->
+          <div class="q-section">
+            <p class="q-section-title">Style & références</p>
+            <div class="q-block">
+              <label class="q-label" for="q-refs">Sites que vous aimez <span>(liens ou descriptions)</span></label>
+              <textarea class="q-textarea" id="q-refs" name="references" style="min-height:80px" placeholder="https://exemple.fr — j'aime le côté épuré et les couleurs sombres..."></textarea>
+            </div>
+            <div class="q-block">
+              <label class="q-label" for="q-couleurs">Couleurs souhaitées ou à éviter</label>
+              <input class="q-input" type="text" id="q-couleurs" name="couleurs" placeholder="J'aime le bleu marine, pas de rouge...">
+            </div>
+            <div class="q-block">
+              <label class="q-label">Style souhaité</label>
+              <div class="q-checkboxes">
+                <label class="q-checkbox-item"><input type="checkbox" name="style[]" value="Moderne / épuré"> Moderne / épuré</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="style[]" value="Classique / sobre"> Classique / sobre</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="style[]" value="Coloré / dynamique"> Coloré / dynamique</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="style[]" value="Élégant / premium"> Élégant / premium</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="style[]" value="Simple / efficace"> Simple / efficace</label>
+              </div>
+            </div>
+          </div>
+ 
+          <!-- ── Technique ── -->
+          <div class="q-section">
+            <p class="q-section-title">Technique & délais</p>
+            <div class="q-row">
+              <div class="q-block">
+                <label class="q-label">Avez-vous déjà un nom de domaine ?</label>
+                <div class="q-radio-group">
+                  <label class="q-radio-item"><input type="radio" name="domaine" value="Oui"> Oui</label>
+                  <label class="q-radio-item"><input type="radio" name="domaine" value="Non"> Non</label>
+                </div>
+              </div>
+              <div class="q-block">
+                <label class="q-label" for="q-domaine-nom">Si oui, lequel ?</label>
+                <input class="q-input" type="text" id="q-domaine-nom" name="nom_domaine" placeholder="monsite.fr">
+              </div>
+            </div>
+            <div class="q-block">
+              <label class="q-label">Délai</label>
+              <div class="q-radio-group">
+                <label class="q-radio-item"><input type="radio" name="delai" value="Pas de contrainte"> Pas de contrainte</label>
+                <label class="q-radio-item"><input type="radio" name="delai" value="Sous 1 mois"> Sous 1 mois</label>
+                <label class="q-radio-item"><input type="radio" name="delai" value="Date précise"> Date précise</label>
+              </div>
+            </div>
+            <div class="q-block">
+              <label class="q-label" for="q-delai-precis">Date précise si applicable</label>
+              <input class="q-input" type="text" id="q-delai-precis" name="delai_precis" placeholder="Ouverture le 1er mars, événement le 15 avril...">
+            </div>
+          </div>
+ 
+          <!-- ── PARTIE 2 (vitrine / complet) ── -->
+          <div class="q-part2-notice">
+            <strong>Les questions suivantes concernent les formules Site vitrine et Site complet.</strong> Si vous avez choisi One page, vous pouvez les ignorer.
+          </div>
+ 
+          <div class="q-section">
+            <p class="q-section-title">Structure du site (vitrine & complet)</p>
+            <div class="q-block">
+              <label class="q-label">Pages souhaitées</label>
+              <div class="q-checkboxes">
+                <label class="q-checkbox-item"><input type="checkbox" name="pages[]" value="Accueil"> Accueil</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="pages[]" value="Services / Prestations"> Services / Prestations</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="pages[]" value="À propos"> À propos</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="pages[]" value="Réalisations / Portfolio"> Réalisations / Portfolio</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="pages[]" value="Tarifs"> Tarifs</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="pages[]" value="Contact"> Contact</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="pages[]" value="Blog / Actualités"> Blog / Actualités</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="pages[]" value="FAQ"> FAQ</label>
+              </div>
+            </div>
+            <div class="q-block">
+              <label class="q-label">Fonctionnalités souhaitées</label>
+              <div class="q-checkboxes">
+                <label class="q-checkbox-item"><input type="checkbox" name="fonctionnalites[]" value="Formulaire de contact"> Formulaire de contact</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="fonctionnalites[]" value="Galerie photos"> Galerie photos</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="fonctionnalites[]" value="Carte Google Maps"> Carte Google Maps</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="fonctionnalites[]" value="Prise de RDV en ligne"> Prise de RDV en ligne</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="fonctionnalites[]" value="Liens réseaux sociaux"> Liens réseaux sociaux</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="fonctionnalites[]" value="Bandeau cookie"> Bandeau cookie</label>
+              </div>
+            </div>
+            <div class="q-block">
+              <label class="q-label" for="q-concurrents">Concurrents dont vous aimez le site <span>(facultatif)</span></label>
+              <textarea class="q-textarea" id="q-concurrents" name="concurrents" style="min-height:80px" placeholder="https://concurrent.fr — j'aime leur page tarifs claire et leur photo d'équipe..."></textarea>
+            </div>
+          </div>
+ 
+          <!-- ── Après livraison ── -->
+          <div class="q-section">
+            <p class="q-section-title">Après la livraison</p>
+            <div class="q-block">
+              <label class="q-label">Souhaitez-vous modifier le contenu vous-même après livraison ?</label>
+              <div class="q-radio-group">
+                <label class="q-radio-item"><input type="radio" name="autonomie" value="Oui — je veux gérer moi-même"> Oui — je veux gérer moi-même</label>
+                <label class="q-radio-item"><input type="radio" name="autonomie" value="Non — je préfère vous contacter"> Non — je préfère vous contacter</label>
+              </div>
+            </div>
+            <div class="q-block">
+              <label class="q-label">Intéressé par la maintenance mensuelle (49 € / mois, sans engagement) ?</label>
+              <div class="q-radio-group">
+                <label class="q-radio-item"><input type="radio" name="maintenance" value="Oui"> Oui</label>
+                <label class="q-radio-item"><input type="radio" name="maintenance" value="Non"> Non</label>
+                <label class="q-radio-item"><input type="radio" name="maintenance" value="À voir après livraison"> À voir après livraison</label>
+              </div>
+            </div>
+            <div class="q-block">
+              <label class="q-label" for="q-autres">Questions ou précisions à ajouter <span>(facultatif)</span></label>
+              <textarea class="q-textarea" id="q-autres" name="autres" style="min-height:80px" placeholder="Tout ce que vous n'avez pas pu dire ailleurs..."></textarea>
+            </div>
+          </div>
+ 
+          <button type="submit" class="btn btn-primary" id="submit-btn" style="width:100%; font-size:1.05rem;">Envoyer le questionnaire</button>
+          <p class="form-success" id="form-success" style="display:none; margin-top:16px">✓ Questionnaire envoyé — je vous réponds avec un devis sous 48h.</p>
+          <p class="form-error" id="form-error" style="display:none; margin-top:16px">Une erreur s'est produite. Réessayez ou contactez-moi via la page contact.</p>
+        </form>
+ 
+      </div>
+    </section>
+  </main>
+ 
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-brand">Alakachan Dev</p>
+        <p>Création de sites web — Lens (62)</p>
+      </div>
+      <div class="footer-links">
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="politique-confidentialite.html">Confidentialité</a>
+        <a href="politique-cookies.html">Cookies</a>
+        <a href="cgv.html">CGV</a>
+      </div>
+    </div>
+  </footer>
+ 
+  <script src="assets/js/menu.js"></script>
+  <script>
+    // Cases à cocher visuelles
+    document.querySelectorAll('.q-checkbox-item, .q-radio-item').forEach(item => {
+      const input = item.querySelector('input');
+      input.addEventListener('change', () => {
+        if (input.type === 'radio') {
+          document.querySelectorAll(`input[name="${input.name}"]`).forEach(r => r.closest('.q-radio-item')?.classList.remove('checked'));
+        }
+        item.classList.toggle('checked', input.checked);
+      });
+    });
+ 
+    // Soumission Formspree
+    const form = document.getElementById('questionnaire-form');
+    const btn = document.getElementById('submit-btn');
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.textContent = 'Envoi en cours...';
+      try {
+        const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+        if (res.ok) {
+          document.getElementById('form-success').style.display = 'block';
+          form.reset();
+          document.querySelectorAll('.q-checkbox-item, .q-radio-item').forEach(i => i.classList.remove('checked'));
+          btn.style.display = 'none';
+        } else { throw new Error(); }
+      } catch { document.getElementById('form-error').style.display = 'block'; btn.disabled = false; btn.textContent = 'Envoyer le questionnaire'; }
+    });
+  </script>
+</body>
+</html>
