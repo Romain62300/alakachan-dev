@@ -1,35 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://romain62300.github.io/alakachan-dev/</loc>
+    <loc>https://alakachan-dev.fr/</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://romain62300.github.io/alakachan-dev/services.html</loc>
+    <loc>https://alakachan-dev.fr/services</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://romain62300.github.io/alakachan-dev/realisations.html</loc>
+    <loc>https://alakachan-dev.fr/realisations</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://romain62300.github.io/alakachan-dev/tarifs.html</loc>
+    <loc>https://alakachan-dev.fr/tarifs</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://romain62300.github.io/alakachan-dev/a-propos.html</loc>
+    <loc>https://alakachan-dev.fr/a-propos</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://romain62300.github.io/alakachan-dev/contact.html</loc>
+    <loc>https://alakachan-dev.fr/contact</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://romain62300.github.io/alakachan-dev/devis.html</loc>
+    <loc>https://alakachan-dev.fr/devis</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://romain62300.github.io/alakachan-dev/faq.html</loc>
+    <loc>https://alakachan-dev.fr/faq</loc>
     <priority>0.6</priority>
   </url>
 </urlset>
+ 
