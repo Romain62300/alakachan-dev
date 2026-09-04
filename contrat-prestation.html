@@ -1,3 +1,6 @@
+
+
+Contrat prestation · HTML
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -116,7 +119,7 @@
                 <div class="partie-ligne"><dt>Nom</dt><dd>Romain Monier</dd></div>
                 <div class="partie-ligne"><dt>Entreprise</dt><dd>Alakachan Dev</dd></div>
                 <div class="partie-ligne"><dt>Statut</dt><dd>Auto-entrepreneur</dd></div>
-                <div class="partie-ligne"><dt>SIRET</dt><dd id="siret-val">À compléter</dd></div>
+                <div class="partie-ligne"><dt>SIRET</dt><dd id="siret-val">10479984600019</dd></div>
                 <div class="partie-ligne"><dt>Adresse</dt><dd>24 Avenue Raoul Briquet, apt 4, 62300 Lens</dd></div>
                 <div class="partie-ligne"><dt>Email</dt><dd>contact@alakachan-dev.fr</dd></div>
                 <div class="partie-ligne"><dt>Site web</dt><dd>alakachan-dev.fr</dd></div>
@@ -176,17 +179,15 @@
         <div class="contrat-article">
           <h2>Article 3 — Tarifs et paiement</h2>
           <table class="contrat-table" style="margin-bottom:16px;">
-            <thead><tr><th>Description</th><th>Montant HT</th><th>Montant TTC</th></tr></thead>
+            <thead><tr><th>Description</th><th>Montant net à payer</th></tr></thead>
             <tbody>
               <tr>
                 <td>Création du site web (<span id="formule-label">formule à sélectionner</span>)</td>
                 <td><input id="montant-ht" placeholder="_____ €" style="border:none;border-bottom:1px solid #cbd5e1;outline:none;font-family:Inter,sans-serif;font-size:0.93rem;width:90px;background:transparent;text-align:center;"></td>
-                <td><input id="montant-ttc" placeholder="_____ €" style="border:none;border-bottom:1px solid #cbd5e1;outline:none;font-family:Inter,sans-serif;font-size:0.93rem;width:90px;background:transparent;text-align:center;"></td>
               </tr>
               <tr class="total">
                 <td><strong>TOTAL</strong></td>
                 <td style="text-align:center;" id="total-ht">—</td>
-                <td style="text-align:center;" id="total-ttc">—</td>
               </tr>
             </tbody>
           </table>
@@ -344,10 +345,8 @@
     const prices = { 'One page — 590 €': '590', 'Site vitrine — 890 €': '890', 'Site complet — 1 290 €': '1 290' };
     const p = prices[label] || '';
     document.getElementById('montant-ht').value = p ? p + ' €' : '';
-    document.getElementById('montant-ttc').value = p ? p + ' €' : '';
     document.getElementById('total-ht').textContent = p ? p + ' €' : '—';
-    document.getElementById('total-ttc').textContent = p ? p + ' €' : '—';
-    const n = parseFloat(p.replace(' ','')) || 0;
+    const n = parseFloat(p.replace(/\s/g, '')) || 0;
     document.getElementById('acompte').value = n ? Math.round(n * 0.3) + ' €' : '';
     document.getElementById('solde').value = n ? Math.round(n * 0.7) + ' €' : '';
   }
