@@ -1,20 +1,39 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Demander un devis | Alakachan Dev</title>
-  <meta name="description" content="Demandez un devis à Romain Monier pour votre site web. Réponse sous 48h.">
+
+  <meta
+    name="description"
+    content="Demandez un devis à Romain Monier pour votre site web. Réponse sous 48h."
+  >
+
   <link rel="icon" href="favicon.ico">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body class="page-contact">
+
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index" class="logo">Alakachan <span>Dev</span></a>
+
+      <a href="index" class="logo">
+        Alakachan <span>Dev</span>
+      </a>
+
       <nav class="main-nav">
         <ul class="nav-list">
           <li><a href="index">Accueil</a></li>
@@ -25,104 +44,429 @@
           <li><a href="contact">Contact</a></li>
         </ul>
       </nav>
-      <a href="devis" class="btn btn-primary">Demander un devis</a>
-      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
-        <span></span><span></span><span></span>
+
+      <a href="devis" class="btn btn-primary">
+        Demander un devis
+      </a>
+
+      <button
+        class="burger"
+        id="burger"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
+
     </div>
   </header>
+
   <div id="nav-overlay"></div>
+
   <main>
+
+    <!-- HERO -->
     <section class="hero">
       <div class="container hero-inner">
+
         <div>
-          <p class="eyebrow">Votre projet</p>
-          <h1>Quelques infos et je vous envoie un devis</h1>
-          <p class="hero-text">Pas besoin d'un cahier des charges complet. Dites-moi ce que vous faites, ce que vous voulez et votre budget — je m'occupe du reste.</p>
+          <p class="eyebrow">
+            Votre projet
+          </p>
+
+          <h1>
+            Quelques infos et je vous envoie un devis
+          </h1>
+
+          <p class="hero-text">
+            Pas besoin d'un cahier des charges complet.
+            Dites-moi ce que vous faites, ce que vous voulez et votre budget —
+            je m'occupe du reste.
+          </p>
         </div>
+
         <div class="hero-card">
-          <h2>Réponse sous 48h</h2>
-          <p>Je lis chaque demande et je réponds avec un devis clair et détaillé. Si votre projet dépasse mon périmètre, je vous le dis honnêtement.</p>
+          <h2>
+            Réponse sous 48h
+          </h2>
+
+          <p>
+            Je lis chaque demande et je réponds avec une première estimation
+            ou les quelques questions nécessaires pour établir un devis précis.
+            Si votre projet dépasse mon périmètre, je vous le dis honnêtement.
+          </p>
         </div>
+
       </div>
     </section>
- 
+
+
+    <!-- FORMULAIRE DE DEVIS -->
     <section class="services-preview">
       <div class="container">
+
         <div class="section-heading">
-          <p class="eyebrow">Formulaire de devis</p>
-          <h2>Décrivez votre besoin</h2>
-          <p>Plus c'est précis, plus mon devis sera juste. Mais même vague, ça marche — on affine ensemble.</p>
+
+          <p class="eyebrow">
+            Formulaire de devis
+          </p>
+
+          <h2>
+            Décrivez votre besoin
+          </h2>
+
+          <p>
+            Plus c'est précis, plus mon devis sera juste.
+            Mais même vague, ça marche — on affine ensemble.
+          </p>
+
         </div>
-        <form class="contact-form" id="contact-form" action="https://formspree.io/f/meepwezw" method="POST">
+
+
+        <form
+          class="contact-form"
+          id="contact-form"
+          action="https://formspree.io/f/meepwezw"
+          method="POST"
+        >
+
+          <!-- NOM -->
           <div class="form-group">
-            <label for="name">Nom</label>
-            <input type="text" id="name" name="name" placeholder="Votre nom" required>
+            <label for="name">
+              Nom
+            </label>
+
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Votre nom"
+              required
+            >
           </div>
+
+
+          <!-- EMAIL -->
           <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Votre email" required>
+            <label for="email">
+              Email
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Votre email"
+              required
+            >
           </div>
+
+
+          <!-- TYPE DE PROJET -->
           <div class="form-group">
-            <label for="type">Type de projet</label>
-            <select id="type" name="type" required>
-              <option value="" disabled selected>Choisissez une option</option>
-              <option value="one-page">Site one page (590 €)</option>
-              <option value="vitrine">Site vitrine (890 €)</option>
-              <option value="complet">Site complet (1 290 €)</option>
-              <option value="refonte">Refonte de site existant</option>
-              <option value="maintenance">Maintenance</option>
-              <option value="autre">Je ne sais pas encore</option>
+
+            <label for="type">
+              Type de projet
+            </label>
+
+            <select
+              id="type"
+              name="type"
+              required
+            >
+
+              <option
+                value=""
+                disabled
+                selected
+              >
+                Choisissez une option
+              </option>
+
+              <option value="one-page">
+                Site one page (590 €)
+              </option>
+
+              <option value="vitrine">
+                Site vitrine (890 €)
+              </option>
+
+              <option value="complet">
+                Site complet (1 290 €)
+              </option>
+
+              <option value="refonte">
+                Refonte de site existant
+              </option>
+
+              <option value="maintenance">
+                Maintenance
+              </option>
+
+              <option value="autre">
+                Je ne sais pas encore
+              </option>
+
             </select>
+
           </div>
+
+
+          <!-- BUDGET -->
           <div class="form-group">
-            <label for="budget">Budget indicatif</label>
-            <input type="text" id="budget" name="budget" placeholder="Ex : 600 €, 1000 €, à définir...">
+
+            <label for="budget">
+              Budget indicatif
+            </label>
+
+            <input
+              type="text"
+              id="budget"
+              name="budget"
+              placeholder="Ex : 600 €, 1000 €, à définir..."
+            >
+
           </div>
+
+
+          <!-- ADMINISTRATION -->
           <div class="form-group">
-            <label for="message">Décrivez votre projet</label>
-            <textarea id="message" name="message" rows="6" placeholder="Ce que vous faites, ce que vous voulez, vos délais si vous en avez..." required></textarea>
+
+            <label for="administration">
+              Souhaitez-vous pouvoir modifier vous-même certains contenus du site ?
+            </label>
+
+            <select
+              id="administration"
+              name="administration"
+            >
+
+              <option
+                value=""
+                selected
+              >
+                À définir
+              </option>
+
+              <option value="non">
+                Non, je peux vous confier les modifications
+              </option>
+
+              <option value="oui">
+                Oui, je souhaite un espace d'administration
+              </option>
+
+            </select>
+
+            <p class="form-help">
+              Si oui, précisez dans votre message les contenus que vous souhaitez
+              pouvoir modifier (tarifs, horaires, textes, images, etc.).
+              Cette fonctionnalité est étudiée et chiffrée séparément selon le besoin.
+            </p>
+
           </div>
-          <input type="hidden" name="_subject" value="Nouvelle demande de devis — Alakachan Dev">
-          <input type="text" name="_gotcha" style="display:none">
-          <button type="submit" class="btn btn-primary" id="submit-btn">Envoyer ma demande</button>
-          <p class="form-success" id="form-success" style="display:none">✓ Demande envoyée — je vous réponds avec un devis sous 48h.</p>
-          <p class="form-error" id="form-error" style="display:none">Une erreur s'est produite. Réessayez ou contactez-moi via la page contact.</p>
+
+
+          <!-- DESCRIPTION -->
+          <div class="form-group">
+
+            <label for="message">
+              Décrivez votre projet
+            </label>
+
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              placeholder="Ce que vous faites, ce que vous voulez, vos délais si vous en avez..."
+              required
+            ></textarea>
+
+          </div>
+
+
+          <!-- FORMSPREE -->
+          <input
+            type="hidden"
+            name="_subject"
+            value="Nouvelle demande de devis — Alakachan Dev"
+          >
+
+          <input
+            type="text"
+            name="_gotcha"
+            style="display:none"
+          >
+
+
+          <!-- ENVOI -->
+          <button
+            type="submit"
+            class="btn btn-primary"
+            id="submit-btn"
+          >
+            Envoyer ma demande
+          </button>
+
+
+          <!-- SUCCÈS -->
+          <p
+            class="form-success"
+            id="form-success"
+            style="display:none"
+          >
+            ✓ Demande envoyée — je vous réponds sous 48h.
+          </p>
+
+
+          <!-- ERREUR -->
+          <p
+            class="form-error"
+            id="form-error"
+            style="display:none"
+          >
+            Une erreur s'est produite.
+            Réessayez ou contactez-moi via la page contact.
+          </p>
+
         </form>
-        <div style="margin-top:40px;padding:28px 32px;background:#eef4ff;border-radius:20px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+
+
+        <!-- QUESTIONNAIRE DÉTAILLÉ -->
+        <div
+          style="
+            margin-top:40px;
+            padding:28px 32px;
+            background:#eef4ff;
+            border-radius:20px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:24px;
+            flex-wrap:wrap;
+          "
+        >
+
           <div>
-            <p style="font-weight:700;font-size:1rem;margin-bottom:6px;">Vous avez déjà une idée précise de ce que vous voulez ?</p>
-            <p style="color:#64748b;font-size:0.93rem;">Remplissez le questionnaire détaillé — plus vous êtes précis, plus mon devis sera juste.</p>
+
+            <p
+              style="
+                font-weight:700;
+                font-size:1rem;
+                margin-bottom:6px;
+              "
+            >
+              Vous avez déjà une idée précise de ce que vous voulez ?
+            </p>
+
+            <p
+              style="
+                color:#64748b;
+                font-size:0.93rem;
+              "
+            >
+              Remplissez le questionnaire détaillé —
+              plus vous êtes précis, plus mon devis sera juste.
+            </p>
+
           </div>
-          <a href="questionnaire-client" class="btn btn-secondary" style="white-space:nowrap;">Remplir le questionnaire</a>
+
+          <a
+            href="questionnaire-client"
+            class="btn btn-secondary"
+            style="white-space:nowrap"
+          >
+            Remplir le questionnaire
+          </a>
+
         </div>
+
       </div>
     </section>
- 
+
+
+    <!-- CONTACT -->
     <section class="cta-section">
+
       <div class="container cta-box">
-        <p class="eyebrow">Pas encore sûr ?</p>
-        <h2>Posez-moi juste une question</h2>
-        <p>Le formulaire de contact est moins formel — c'est fait pour ça.</p>
-        <a href="contact" class="btn btn-primary">Page contact</a>
+
+        <p class="eyebrow">
+          Pas encore sûr ?
+        </p>
+
+        <h2>
+          Posez-moi juste une question
+        </h2>
+
+        <p>
+          Le formulaire de contact est moins formel — c'est fait pour ça.
+        </p>
+
+        <a
+          href="contact"
+          class="btn btn-primary"
+        >
+          Page contact
+        </a>
+
       </div>
+
     </section>
+
   </main>
+
+
+  <!-- FOOTER -->
   <footer class="site-footer">
+
     <div class="container footer-inner">
+
       <div>
-        <p class="footer-brand">Alakachan Dev</p>
-        <p>Création de sites web — Lens (62)</p>
+
+        <p class="footer-brand">
+          Alakachan Dev
+        </p>
+
+        <p>
+          Création de sites web — Lens (62)
+        </p>
+
       </div>
+
+
       <div class="footer-links">
-  <a href="faq">FAQ</a>
-        <a href="mentions-legales">Mentions légales</a>
-        <a href="politique-confidentialite">Confidentialité</a>
-        <a href="politique-cookies.html">Cookies</a><a href="cgv">CGV</a>
+
+        <a href="faq.html">
+          FAQ
+        </a>
+
+        <a href="mentions-legales">
+          Mentions légales
+        </a>
+
+        <a href="politique-confidentialite">
+          Confidentialité
+        </a>
+
+        <a href="politique-cookies.html">
+          Cookies
+        </a>
+
+        <a href="cgv">
+          CGV
+        </a>
+
       </div>
+
     </div>
+
   </footer>
+
+
   <script src="assets/js/menu.js"></script>
   <script src="assets/js/form.js"></script>
+
 </body>
 </html>
