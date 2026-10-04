@@ -116,6 +116,7 @@
                 <label class="q-radio-item"><input type="radio" name="Formule envisagée" value="One page — 590 €"> One page — 590 €</label>
                 <label class="q-radio-item"><input type="radio" name="Formule envisagée" value="Site vitrine — 890 €"> Site vitrine — 890 €</label>
                 <label class="q-radio-item"><input type="radio" name="Formule envisagée" value="Site complet — 1 290 €"> Site complet — 1 290 €</label>
+                <label class="q-radio-item"><input type="radio" name="Formule envisagée" value="Boutique en ligne — sur devis"> Boutique en ligne — sur devis</label>
                 <label class="q-radio-item"><input type="radio" name="Formule envisagée" value="Je ne sais pas encore"> Je ne sais pas encore</label>
               </div>
             </div>
@@ -159,6 +160,15 @@
                 <label class="q-checkbox-item"><input type="checkbox" name="Objectif du site[]" value="Recevoir des demandes de devis"> Recevoir des demandes de devis</label>
                 <label class="q-checkbox-item"><input type="checkbox" name="Objectif du site[]" value="Présenter mon activité"> Présenter mon activité</label>
                 <label class="q-checkbox-item"><input type="checkbox" name="Objectif du site[]" value="Remplacer une carte de visite"> Remplacer une carte de visite</label>
+              </div>
+            </div>
+            <div class="q-block">
+              <label class="q-label">Souhaitez-vous vendre des produits directement sur le site ?</label>
+              <p class="q-hint">Paiement en ligne et livraison ou retrait. Si oui, une section dédiée s'affiche plus bas.</p>
+              <div class="q-radio-group">
+                <label class="q-radio-item"><input type="radio" name="Vente en ligne" value="Oui" data-ecommerce="show"> Oui</label>
+                <label class="q-radio-item"><input type="radio" name="Vente en ligne" value="Pas tout de suite, mais plus tard" data-ecommerce="show"> Pas tout de suite, mais plus tard</label>
+                <label class="q-radio-item"><input type="radio" name="Vente en ligne" value="Non" data-ecommerce="hide"> Non</label>
               </div>
             </div>
             <div class="q-block">
@@ -312,7 +322,7 @@
  
           <!-- ── PARTIE 2 (vitrine / complet) ── -->
           <div class="q-part2-notice">
-            <strong>Les questions suivantes concernent les formules Site vitrine et Site complet.</strong> Si vous avez choisi One page, vous pouvez les ignorer.
+            <strong>Les questions suivantes concernent les formules Site vitrine, Site complet et Boutique en ligne.</strong> Si vous avez choisi One page, vous pouvez les ignorer.
           </div>
  
           <div class="q-section">
@@ -339,11 +349,159 @@
                 <label class="q-checkbox-item"><input type="checkbox" name="Fonctionnalités souhaitées[]" value="Prise de RDV en ligne"> Prise de RDV en ligne</label>
                 <label class="q-checkbox-item"><input type="checkbox" name="Fonctionnalités souhaitées[]" value="Liens réseaux sociaux"> Liens réseaux sociaux</label>
                 <label class="q-checkbox-item"><input type="checkbox" name="Fonctionnalités souhaitées[]" value="Bandeau cookie"> Bandeau cookie</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="Fonctionnalités souhaitées[]" value="Formulaire de demande de devis"> Formulaire de demande de devis</label>
               </div>
             </div>
             <div class="q-block">
               <label class="q-label" for="q-concurrents">Concurrents dont vous aimez le site <span>(facultatif)</span></label>
               <textarea class="q-textarea" id="q-concurrents" name="Concurrents appréciés" style="min-height:80px" placeholder="https://concurrent.fr — j'aime leur page tarifs claire et leur photo d'équipe..."></textarea>
+            </div>
+          </div>
+
+          <!-- ── Boutique en ligne (affichée si vente en ligne = oui / plus tard) ── -->
+          <div class="q-section" id="q-ecommerce" hidden>
+            <p class="q-section-title">Boutique en ligne</p>
+            <p class="q-hint" style="margin-bottom:28px">Pas besoin d'avoir toutes les réponses : cochez « Je ne sais pas » si besoin, on en discutera ensemble.</p>
+
+            <div class="q-block">
+              <label class="q-label" for="q-ec-produits">Que souhaitez-vous vendre ?</label>
+              <textarea class="q-textarea" id="q-ec-produits" name="E-commerce — Produits vendus" style="min-height:80px" placeholder="Compositions florales, bijoux faits main, vêtements, produits alimentaires..."></textarea>
+            </div>
+
+            <div class="q-block">
+              <label class="q-label">Combien de produits au lancement ?</label>
+              <div class="q-radio-group">
+                <label class="q-radio-item"><input type="radio" name="E-commerce — Nombre de produits" value="Moins de 15"> Moins de 15</label>
+                <label class="q-radio-item"><input type="radio" name="E-commerce — Nombre de produits" value="15 à 50"> 15 à 50</label>
+                <label class="q-radio-item"><input type="radio" name="E-commerce — Nombre de produits" value="50 à 200"> 50 à 200</label>
+                <label class="q-radio-item"><input type="radio" name="E-commerce — Nombre de produits" value="Plus de 200"> Plus de 200</label>
+              </div>
+            </div>
+
+            <div class="q-block">
+              <label class="q-label">Vos produits existent-ils en plusieurs versions ?</label>
+              <div class="q-checkboxes">
+                <label class="q-checkbox-item"><input type="checkbox" name="E-commerce — Variantes[]" value="Couleurs"> Couleurs</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="E-commerce — Variantes[]" value="Tailles"> Tailles</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="E-commerce — Variantes[]" value="Formats / dimensions"> Formats / dimensions</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="E-commerce — Variantes[]" value="Parfums / matières"> Parfums / matières</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="E-commerce — Variantes[]" value="Aucune variante"> Aucune variante</label>
+              </div>
+            </div>
+
+            <div class="q-block">
+              <label class="q-label">Vos clients doivent-ils pouvoir personnaliser leur commande ?</label>
+              <div class="q-radio-group">
+                <label class="q-radio-item"><input type="radio" name="E-commerce — Personnalisation" value="Oui — message personnalisé"> Oui — message personnalisé</label>
+                <label class="q-radio-item"><input type="radio" name="E-commerce — Personnalisation" value="Oui — prénom / gravure / texte sur le produit"> Oui — prénom / gravure / texte</label>
+                <label class="q-radio-item"><input type="radio" name="E-commerce — Personnalisation" value="Oui — autre"> Oui — autre</label>
+                <label class="q-radio-item"><input type="radio" name="E-commerce — Personnalisation" value="Non"> Non</label>
+              </div>
+            </div>
+
+            <div class="q-block">
+              <label class="q-label">Comment fonctionnent vos stocks ?</label>
+              <div class="q-radio-group">
+                <label class="q-radio-item"><input type="radio" name="E-commerce — Stock" value="Stock limité à suivre"> Stock limité à suivre</label>
+                <label class="q-radio-item"><input type="radio" name="E-commerce — Stock" value="Fabrication à la commande"> Fabrication à la commande</label>
+                <label class="q-radio-item"><input type="radio" name="E-commerce — Stock" value="Pièces uniques"> Pièces uniques</label>
+                <label class="q-radio-item"><input type="radio" name="E-commerce — Stock" value="Je ne sais pas"> Je ne sais pas</label>
+              </div>
+            </div>
+
+            <div class="q-block">
+              <label class="q-label">Vos produits sont-ils fragiles ou périssables ?</label>
+              <div class="q-radio-group">
+                <label class="q-radio-item"><input type="radio" name="E-commerce — Produits fragiles / périssables" value="Fragiles"> Fragiles</label>
+                <label class="q-radio-item"><input type="radio" name="E-commerce — Produits fragiles / périssables" value="Périssables"> Périssables</label>
+                <label class="q-radio-item"><input type="radio" name="E-commerce — Produits fragiles / périssables" value="Les deux"> Les deux</label>
+                <label class="q-radio-item"><input type="radio" name="E-commerce — Produits fragiles / périssables" value="Non"> Non</label>
+              </div>
+            </div>
+
+            <div class="q-block">
+              <label class="q-label">Comment vos clients récupèrent-ils leur commande ?</label>
+              <div class="q-checkboxes">
+                <label class="q-checkbox-item"><input type="checkbox" name="E-commerce — Livraison[]" value="Retrait sur place"> Retrait sur place</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="E-commerce — Livraison[]" value="Livraison locale par moi-même"> Livraison locale par moi-même</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="E-commerce — Livraison[]" value="Expédition en France"> Expédition en France</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="E-commerce — Livraison[]" value="Expédition à l'international"> Expédition à l'international</label>
+              </div>
+            </div>
+
+            <div class="q-block">
+              <label class="q-label">Transporteurs souhaités <span>(si expédition)</span></label>
+              <div class="q-checkboxes">
+                <label class="q-checkbox-item"><input type="checkbox" name="E-commerce — Transporteurs[]" value="La Poste / Colissimo"> La Poste / Colissimo</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="E-commerce — Transporteurs[]" value="Mondial Relay"> Mondial Relay</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="E-commerce — Transporteurs[]" value="Chronopost"> Chronopost</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="E-commerce — Transporteurs[]" value="Autre"> Autre</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="E-commerce — Transporteurs[]" value="Je ne sais pas"> Je ne sais pas</label>
+              </div>
+            </div>
+
+            <div class="q-block">
+              <label class="q-label">Comment calculer les frais de livraison ?</label>
+              <div class="q-radio-group">
+                <label class="q-radio-item"><input type="radio" name="E-commerce — Frais de port" value="Prix fixe par commande"> Prix fixe par commande</label>
+                <label class="q-radio-item"><input type="radio" name="E-commerce — Frais de port" value="Selon le poids / la taille"> Selon le poids / la taille</label>
+                <label class="q-radio-item"><input type="radio" name="E-commerce — Frais de port" value="Offerts à partir d'un montant"> Offerts à partir d'un montant</label>
+                <label class="q-radio-item"><input type="radio" name="E-commerce — Frais de port" value="Je ne sais pas"> Je ne sais pas</label>
+              </div>
+            </div>
+
+            <div class="q-block">
+              <label class="q-label">Moyens de paiement souhaités</label>
+              <div class="q-checkboxes">
+                <label class="q-checkbox-item"><input type="checkbox" name="E-commerce — Paiement[]" value="Carte bancaire"> Carte bancaire</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="E-commerce — Paiement[]" value="PayPal"> PayPal</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="E-commerce — Paiement[]" value="Paiement en plusieurs fois"> Paiement en plusieurs fois</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="E-commerce — Paiement[]" value="Paiement au retrait"> Paiement au retrait</label>
+              </div>
+            </div>
+
+            <div class="q-block">
+              <label class="q-label">Vos clients doivent-ils créer un compte pour commander ?</label>
+              <div class="q-radio-group">
+                <label class="q-radio-item"><input type="radio" name="E-commerce — Compte client" value="Non, commande rapide sans compte"> Non, commande rapide sans compte</label>
+                <label class="q-radio-item"><input type="radio" name="E-commerce — Compte client" value="Au choix du client"> Au choix du client</label>
+                <label class="q-radio-item"><input type="radio" name="E-commerce — Compte client" value="Oui, compte obligatoire"> Oui, compte obligatoire</label>
+                <label class="q-radio-item"><input type="radio" name="E-commerce — Compte client" value="Je ne sais pas"> Je ne sais pas</label>
+              </div>
+            </div>
+
+            <div class="q-block">
+              <label class="q-label">Combien de commandes par mois imaginez-vous au début ?</label>
+              <div class="q-radio-group">
+                <label class="q-radio-item"><input type="radio" name="E-commerce — Commandes par mois" value="Moins de 10"> Moins de 10</label>
+                <label class="q-radio-item"><input type="radio" name="E-commerce — Commandes par mois" value="10 à 50"> 10 à 50</label>
+                <label class="q-radio-item"><input type="radio" name="E-commerce — Commandes par mois" value="Plus de 50"> Plus de 50</label>
+                <label class="q-radio-item"><input type="radio" name="E-commerce — Commandes par mois" value="Je ne sais pas"> Je ne sais pas</label>
+              </div>
+            </div>
+
+            <div class="q-block">
+              <label class="q-label">Vendez-vous déjà en ligne ailleurs ?</label>
+              <div class="q-checkboxes">
+                <label class="q-checkbox-item"><input type="checkbox" name="E-commerce — Vente existante[]" value="Facebook / Instagram"> Facebook / Instagram</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="E-commerce — Vente existante[]" value="Etsy / Vinted / Leboncoin"> Etsy / Vinted / Leboncoin</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="E-commerce — Vente existante[]" value="Une autre boutique en ligne"> Une autre boutique en ligne</label>
+                <label class="q-checkbox-item"><input type="checkbox" name="E-commerce — Vente existante[]" value="Non, c'est une première"> Non, c'est une première</label>
+              </div>
+            </div>
+
+            <div class="q-block">
+              <label class="q-label">Avez-vous déjà des conditions générales de vente (CGV) ?</label>
+              <p class="q-hint">Retours, remboursements, délais : le contenu de vos CGV relève de votre activité. Je les intègre au site et je peux vous fournir une structure de départ.</p>
+              <div class="q-radio-group">
+                <label class="q-radio-item"><input type="radio" name="E-commerce — CGV" value="Oui, déjà rédigées"> Oui, déjà rédigées</label>
+                <label class="q-radio-item"><input type="radio" name="E-commerce — CGV" value="Non, à préparer"> Non, à préparer</label>
+              </div>
+            </div>
+
+            <div class="q-block">
+              <label class="q-label" for="q-ec-autre">Autres besoins pour la boutique <span>(facultatif)</span></label>
+              <textarea class="q-textarea" id="q-ec-autre" name="E-commerce — Autres besoins" style="min-height:80px" placeholder="Cartes cadeaux, codes promo, produits sur devis uniquement (mariages, événements)..."></textarea>
             </div>
           </div>
  
@@ -409,6 +567,24 @@
       });
     });
  
+    // Affichage de la section Boutique en ligne
+    const ecSection = document.getElementById('q-ecommerce');
+    const ecFields = ecSection.querySelectorAll('input, textarea, select');
+    function toggleEcommerce(show) {
+      ecSection.hidden = !show;
+      ecFields.forEach(f => { f.disabled = !show; }); // champs masqués non envoyés
+    }
+    toggleEcommerce(false);
+    document.querySelectorAll('input[data-ecommerce]').forEach(r => {
+      r.addEventListener('change', () => toggleEcommerce(r.checked && r.dataset.ecommerce === 'show'));
+    });
+    document.querySelector('input[value="Boutique en ligne — sur devis"]').addEventListener('change', e => {
+      if (!e.target.checked) return;
+      const oui = document.querySelector('input[name="Vente en ligne"][value="Oui"]');
+      oui.checked = true;
+      oui.dispatchEvent(new Event('change'));
+    });
+
     // Soumission Formspree
     const form = document.getElementById('questionnaire-form');
     const btn = document.getElementById('submit-btn');
@@ -422,10 +598,11 @@
           document.getElementById('form-success').style.display = 'block';
           form.reset();
           document.querySelectorAll('.q-checkbox-item, .q-radio-item').forEach(i => i.classList.remove('checked'));
+          toggleEcommerce(false);
           btn.style.display = 'none';
         } else { throw new Error(); }
       } catch { document.getElementById('form-error').style.display = 'block'; btn.disabled = false; btn.textContent = 'Envoyer le questionnaire'; }
     });
   </script>
 </body>
-</html
+</html>
